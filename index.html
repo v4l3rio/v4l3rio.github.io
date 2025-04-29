@@ -1,8 +1,463 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Valerio Di Zio - CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valerio Di Zio - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p>Hello, my CV online is coming...</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Valerio Di Zio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#progetti">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#competenze">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#esperienze">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formazione">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contatti">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="hero-content">
+                        <h1>Valerio Di Zio</h1>
+                        <h2>Computer Engineer</h2>
+                        <p class="lead">Passionate about computer science, AI and cybersecurity. Currently a Computer Engineering student at the University of Bologna.</p>
+                        <a href="#progetti" class="btn btn-primary">Discover my projects</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-image-container">
+                        <!-- Placeholder per l'immagine profilo -->
+                        <div class="profile-image-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                            <p>Profile Image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progetti in Evidenza -->
+    <section id="progetti" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="row featured-projects">
+                <!-- Position Pal -->
+                <div class="col-md-6 mb-4">
+                    <div class="project-card featured">
+                        <div class="project-header">
+                            <h3>Position Pal</h3>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Software Architecture and Platform and Software Process Engineering</p>
+                            <p class="project-description">Distributed application for location sharing.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Distributed Systems</span>
+                                <span class="tech-tag">Software Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/position-pal" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scooby -->
+                <div class="col-md-6 mb-4">
+                    <div class="project-card featured">
+                        <div class="project-header">
+                            <h3>Scooby</h3>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Programming and Development Paradigms</p>
+                            <p class="project-description">Web Crawler and Scraper with DSL.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Scala</span>
+                                <span class="tech-tag">DSL</span>
+                                <span class="tech-tag">Web Scraping</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/roostico/scooby" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Altri Progetti -->
+            <div class="row other-projects">
+                <div class="col-12">
+                    <h3 class="other-projects-title">Other Projects</h3>
+                </div>
+                
+                <!-- Nes Gen -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Nes Gen</h4>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Deep Learning</p>
+                            <p class="project-description">Generative AI for creating Nintendo NES style music.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/roostico/NesGen" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sentiment Analysis -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Sentiment Analysis</h4>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Big Data</p>
+                            <p class="project-description">Sentiment analysis for book reviews using Spark, Map Reduce and AWS.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/v4l3rio/bigData-project" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collaborative Whiteboard -->
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Collaborative Whiteboard</h4>
+                            <span class="project-year">2023</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Web Developing and Distributed System</p>
+                            <p class="project-description">Online collaborative whiteboard.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/v4l3rio/Progetto-ASW-CollaborativeWhiteboard" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flowers iOS Application -->
+                <div class="col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Flowers iOS Application</h4>
+                            <span class="project-year">2022</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Mobile Systems Programming</p>
+                            <p class="project-description">Application to help users focus and train.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/v4l3rio/Flowers-App" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2121-The Last Man Standing -->
+                <div class="col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>2121-The Last Man Standing</h4>
+                            <span class="project-year">2020</span>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-subtitle">Project of Object Oriented Programming</p>
+                            <p class="project-description">Survival video game.</p>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/v4l3rio/OOP20-2121TLMS" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competenze -->
+    <section id="competenze" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="row">
+                <!-- Linguaggi di Programmazione -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <ul class="skills-list">
+                            <li>Java</li>
+                            <li>Scala</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
+                            <li>Kotlin</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tecnologie -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <h3><i class="fas fa-laptop-code"></i> Technologies</h3>
+                        <ul class="skills-list">
+                            <li>Docker</li>
+                            <li>Git</li>
+                            <li>NodeJS</li>
+                            <li>Angular</li>
+                            <li>Vue</li>
+                            <li>CI/CD</li>
+                            <li>No-SQL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="col-md-4 mb-4">
+                    <div class="skills-card">
+                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                        <ul class="skills-list">
+                            <li>Teamwork</li>
+                            <li>Object Oriented</li>
+                            <li>Functional Programming</li>
+                            <li>DevOps</li>
+                            <li>Web Development</li>
+                            <li>AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esperienze Lavorative -->
+    <section id="esperienze" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="timeline">
+                <!-- SER.IN.AR Excel Course -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>SER.IN.AR</h3>
+                        <h4>Excel Trainer</h4>
+                        <p class="timeline-date">2024 - Present</p>
+                        <div class="timeline-description">
+                            <p>Training on the use of Microsoft Excel for school staff, focusing on data management and administrative activities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SER.IN.AR Robotics Course -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>SER.IN.AR</h3>
+                        <h4>Robotics Instructor</h4>
+                        <p class="timeline-date">2024 - Present</p>
+                        <div class="timeline-description">
+                            <p>Conducting practical robotics workshops for middle school students, introducing them to programming and robotics fundamentals using platforms like LEGO Mindstorms.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SER.IN.AR Coding Course -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>SER.IN.AR</h3>
+                        <h4>Coding Instructor</h4>
+                        <p class="timeline-date">2024 - Present</p>
+                        <div class="timeline-description">
+                            <p>Teaching basic programming concepts and problem-solving to elementary school students, using tools like Snap for block-based programming languages.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visup -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Visup</h3>
+                        <h4>Frontend Developer</h4>
+                        <p class="timeline-date">May 2023 - December 2023</p>
+                        <div class="timeline-description">
+                            <p>Development of user interfaces for Industry 4.0 applications using Angular, in coordination with backend developers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Life Learning -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Life Learning</h3>
+                        <h4>Video Editor</h4>
+                        <p class="timeline-date">January 2018 - June 2018</p>
+                        <div class="timeline-description">
+                            <p>Video editing at Life Learning company - Pescara (Adobe Premiere).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formazione -->
+    <section id="formazione" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="timeline">
+                <!-- Master -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Computer Engineering and Computer Science (Master's Degree)</h3>
+                        <h4>Alma Mater Studiorum - University of Bologna</h4>
+                        <p class="timeline-date">2022 - Present</p>
+                    </div>
+                </div>
+                
+                <!-- Laurea Triennale -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Computer Engineering and Computer Science (Bachelor's Degree)</h3>
+                        <h4>Alma Mater Studiorum - University of Bologna</h4>
+                        <p class="timeline-date">2019 - 2022</p>
+                    </div>
+                </div>
+                
+                <!-- Diploma -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>IIS ALESSANDRINI - MONTESILVANO</h3>
+                        <h4>IT sector</h4>
+                        <p class="timeline-date">2014/2015 - 2018/2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>diziovalerio@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+39 351 900 6333</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <p><a href="https://github.com/v4l3rio" target="_blank">github.com/v4l3rio</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <p><a href="https://v4l3rio.github.io/" target="_blank">v4l3rio.github.io/</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Valerio Di Zio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
