@@ -1,14 +1,11 @@
 # ──────────────────────────────────────────────────────────────
 # PROJECT · v4l3rio.github.io
 # ──────────────────────────────────────────────────────────────
-# Portfolio personale hostato su GitHub Pages. Sito statico
-# HTML/CSS/JS con configurazione Jekyll (usata da GitHub Pages
-# per il build automatico).
+# Portfolio personale su GitHub Pages, compilato con Vite.
 #
-# Stack:  HTML5, CSS3, JavaScript vanilla, Jekyll (GitHub Pages)
-# Deploy: push su main → GitHub Pages fa il build automaticamente
-# Local:  bundle exec jekyll serve  (richiede Ruby + Bundler)
-#         oppure apri index.html direttamente nel browser
+# Stack: React, TypeScript, Vite, Tailwind CSS, Cojeev UI
+# Deploy: workflow GitHub Pages sul branch master
+# Local: pnpm install, poi pnpm dev
 # Nota:   il repo deve chiamarsi v4l3rio.github.io su GitHub
 # ──────────────────────────────────────────────────────────────
 
@@ -28,3 +25,10 @@ Gemfile.lock
 # Editor
 .vscode/
 .idea/
+
+node_modules/
+dist/
+.prerender/
+.qa/
+test-results/
+playwright-report/
