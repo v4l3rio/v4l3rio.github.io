@@ -86,9 +86,12 @@ export function App({ language = "en" }: { language?: Language }) {
           <p className="confidentiality metadata">{t.workPrivacy}</p>
         </div>
         <div className="toolkit"><h3>{t.skills}</h3><dl>
+          <div><dt>{t.programmingLanguage}</dt><dd>{skills.language}</dd></div>
+          <div><dt>{t.development}</dt><dd>{skills.development}, {t.angular}</dd></div>
           <div><dt>{t.cloud}</dt><dd>{skills.cloud}</dd></div>
-          <div><dt>{t.development}</dt><dd>{skills.development}. {t.angular}.</dd></div>
-          <div><dt>{t.delivery}</dt><dd>{t.methods}.</dd></div>
+          <div><dt>{t.tools}</dt><dd>{skills.tools}, {t.containers}</dd></div>
+          <div><dt>{t.practices}</dt><dd>{t.methods}</dd></div>
+          <div><dt>{t.architectures}</dt><dd>{t.architectureDetail}</dd></div>
         </dl></div>
       </section>
 

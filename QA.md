@@ -1,5 +1,14 @@
 # Verification, 2 October 2026
 
+## CV alignment, 3 October 2026
+
+- `pnpm build` passes: TypeScript, production assets and prerendered English/Italian HTML. The existing bundle-size warning remains.
+- Both prerendered summaries exactly match the approved CV HTML. Each toolkit contains six labelled definitions separating language, frameworks/libraries/SDKs, Google Cloud services, tools, development practices and architectures.
+- Angular is explicitly previous experience. No DDD, TDD, Terraform, named container engine or generic Google AI skill was added. The English education record explains the original 110/110 cum laude grade without fabricating a GPA.
+- Static checks confirm that every section anchor has a destination, all four selected projects remain, and all three CV download actions point to the two existing PDF files in the production build.
+- The approved PDFs, repository copies and built downloads are byte-identical. SHA-256: English `e5ddc84248b281e4a325c875e62c762bb864cac32bb7ef661839d6f42569892e`; Italian `c98a5cfa9c946dc02de5bd5628f7e2e87b6dcb311b20b9942dfa463199e40f74`.
+- Typography, CSS, controls and the established responsive rules were not changed. No browser sessions or browser tests were launched. Static/build checks do not establish the visual layout of the longer text in either theme or viewport.
+
 ## Completed checks
 
 - `pnpm build` passes after the archive spacing correction: TypeScript, production assets and prerendered English/Italian HTML.
