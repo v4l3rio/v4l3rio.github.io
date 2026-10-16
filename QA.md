@@ -1,5 +1,13 @@
 # Verification, 2 October 2026
 
+## Personal profile update, 16 October 2026
+
+- Replaced the Italian introduction with the user-approved presentation, including cooking, video games and spending time with others; updated the English translation to match.
+- Regenerated both downloadable PDFs from the CV HTML sources. Each retains two A4 pages, all 55 text blocks, 12 links, embedded fonts and tagged structure. All four pages were rendered with Poppler and visually reviewed; geometry checks found no overlapping words or content outside the page.
+- Local approved PDFs, repository copies and production downloads are byte-identical. SHA-256: English `c142a92069acd18ea0960ba22cf96fc12fc52fbbd99280c7d3f8cd8dfc64a3fe`; Italian `e2944d1d05b4a9009c8a63f3c8223cbcd2b945b6b4ae1bcba47329f72b68b456`.
+- The initial browser run exposed pre-existing horizontal overflow in the English About section at 320 and 375px, reproduced with the previous introduction. The grade text now wraps on mobile instead of forcing the grid wider than the viewport.
+- Final `pnpm test`: all 12 tests pass after the correction. Coverage includes both languages and themes at 320, 375, 768 and 1440px, accessibility, expanded archive spacing, navigation, downloads, keyboard controls, no-JavaScript content, zoom and reduced motion. The production build passes with the existing bundle-size warning.
+
 ## CV alignment, 3 October 2026
 
 - `pnpm build` passes: TypeScript, production assets and prerendered English/Italian HTML. The existing bundle-size warning remains.

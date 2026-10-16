@@ -161,6 +161,7 @@ p, li, dd { overflow-wrap: break-word; }
   .project-row { grid-template-columns: 1fr; gap: 20px; }
   .project-links { grid-column: 1; flex-wrap: wrap; }
   .about-section { grid-template-columns: 1fr; gap: 40px; }
+  .grade { white-space: normal; }
   .credentials { padding-top: 36px; border-top: 1px solid var(--v-border); }
   .contact-layout { grid-template-columns: 1fr; gap: 48px; }
   .cv-downloads { width: 100%; max-width: none; border-top: 1px solid var(--v-border); padding-top: 32px; }
