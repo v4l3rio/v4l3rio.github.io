@@ -1,5 +1,15 @@
 # Verification, 2 October 2026
 
+## Profile and UI refinement, 16 October 2026
+
+- Updated both introductions: a more natural opening, current Google Cloud work without the employer name, and graduation explicitly dated 2025. CV HTML, portfolio copy and prerendered text agree.
+- Split the website toolkit into everyday work and other technologies used in projects and earlier roles. The user confirmed Kotlin, Scala, Angular, gRPC, RabbitMQ, PostgreSQL, Akka, TensorFlow and PyTorch; Angular moved out of the everyday group.
+- Replaced the pink open archive with a neutral theme-aware surface, plain chevron, subtle hover and inset keyboard focus. The hover background does not interpolate across themes, preserving contrast during immediate switches.
+- Added regression coverage for the same surface before/after opening, no background image, clearance below the header and the inset keyboard focus indicator. Existing accessibility checks still cover closed and expanded states in both themes.
+- Inspected current desktop toolkit and open archive screenshots in light/dark mode, including the narrow dark layout. Both PDF languages remain two A4 pages with all 55 text blocks, 12 links, embedded fonts and tagged structure; all four rendered pages passed visual and geometry checks.
+- Current PDF hashes, identical in the local output, repository and production build: English `b9694d4dd24f5f44dfb061077449ab258437960770e5fa2ec28ee1048a05992d`; Italian `07d842e4609ef19d24e8522e6c586f2b1298019b5d4f7a022538e526bbe913d7`.
+- Final validation: `pnpm build` and all 12 Playwright tests pass, including the new archive regressions, both languages/themes, mobile layouts, accessibility, keyboard actions, PDF downloads, no-JavaScript content, zoom and reduced motion. Only the pre-existing bundle-size warning remains.
+
 ## Personal profile update, 16 October 2026
 
 - Replaced the Italian introduction with the user-approved presentation, including cooking, video games and spending time with others; updated the English translation to match.

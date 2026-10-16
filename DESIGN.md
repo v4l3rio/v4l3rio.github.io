@@ -13,7 +13,7 @@ User-selected source: Cojeev UI, installed through `pnpm dlx shadcn@latest regis
 - Hierarchy: name and role first, current work second, then repositories as evidence, qualifications and contact.
 - Layout: a wide introduction, an experience list, a highlighted thesis followed by project rows, and a compact qualifications area. Content does not need a uniform wall of cards.
 - Spacing: generous section gaps separate topics; tighter title/metadata gaps keep each record together.
-- Project archive: its header and content share 20–32px side insets, keeping separators clear of the rounded panel. The introduction gets a readable column of at least 220px on desktop; below 761px it sits above the list. Open-panel text inherits Cojeev's accent foreground in both themes.
+- Project archive: its header and content share 20–32px side insets, keeping separators clear of the rounded panel. The introduction gets a readable column of at least 220px on desktop; below 761px it sits above the list. A neutral paper surface and theme-aware text replace the painted accent panel in both themes.
 - Illustration: one authored Cojeev cloud shape links the chosen visual system to Cloud Developer, without pretending to be a portrait, diagram or company logo.
 - Icons: only controls with a clear meaning, such as theme, menu, download and external destinations.
 - Motion: short disclosure and theme transitions explain state changes; content is never hidden behind scroll animation. Respect reduced motion.
@@ -27,8 +27,15 @@ The 3 October alignment uses the approved CV summary and separates the toolkit i
 
 ## Interaction and state plan
 
+### October 16 refinement
+
+- Visual thesis: keep the existing warm paper, ink and olive palette, with quiet surfaces and readable technical copy in both themes.
+- Content plan: introduce the current work without naming the employer in the profile, include the 2025 graduation year, and distinguish everyday work tools from other technologies used in university projects and earlier roles. The user confirmed Kotlin, Scala, Angular, gRPC, RabbitMQ, PostgreSQL, Akka, TensorFlow and PyTorch for that second group; no proficiency scores are implied.
+- Interaction thesis: the project archive keeps a neutral surface when expanded, uses a simple rotating chevron and subtle header hover, and retains an inset keyboard focus indicator. Existing disclosure and theme motion remain; reduced motion is respected.
+- Header hover changes immediately so a theme switch cannot briefly leave pale text on the previous light hover background.
+
 Navigation anchors, project disclosures, language switch, light/dark switch, native email link and PDF downloads all have real destinations or state changes. Content is local and prerendered, so no synthetic loading/empty states for nonexistent fetching. A recoverable error boundary and useful no-JavaScript content protect the main reader journey. On narrow screens the menu opens in normal flow, closes on destination/Escape, and retains visible focus. Mobile actions are at least 44px tall.
 
 ## Verification and deployment
 
-Typecheck, production build, static HTML check and browser click-through at 320, 375, 768 and 1440px; both languages, both themes, keyboard, reduced motion, contrast, console, local PDFs and link targets. Test the production preview, not just development mode. Keep an element-by-element record in `QA.md`. The build outputs a static `dist` for GitHub Pages. The user authorized commit and publication on the existing `master` branch on 3 October. No additional browser sessions are permitted; distinguish static/build verification from earlier browser results.
+Typecheck, production build, static HTML check and browser click-through at 320, 375, 768 and 1440px; both languages, both themes, keyboard, reduced motion, contrast, console, local PDFs and link targets. Test the production preview, not just development mode. Keep an element-by-element record in `QA.md`. The build outputs a static `dist` for GitHub Pages. The user authorized commit and publication on the existing `master` branch on 16 October. Current verification uses headless browsers without opening foreground windows; distinguish current results from historical checks.

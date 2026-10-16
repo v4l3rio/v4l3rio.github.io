@@ -37,8 +37,14 @@ for (const language of ["en", "it"] as const) {
 
         const archive = page.locator(".project-archive");
         const trigger = archive.getByRole("button", { name: copy[language].archive, exact: true });
+        const restingSurface = await archive.locator('[data-slot="accordion-item"]').evaluate(item => getComputedStyle(item).backgroundColor);
         await trigger.click();
         await expect(trigger).toHaveAttribute("aria-expanded", "true");
+        const openSurface = await archive.locator('[data-slot="accordion-item"]').evaluate(item => ({
+          background: getComputedStyle(item).backgroundColor,
+          image: getComputedStyle(item).backgroundImage,
+        }));
+        expect(openSurface).toEqual({ background: restingSurface, image: "none" });
         await expect.poll(() => archive.evaluate(root => {
           const panel = root.querySelector('[data-slot="accordion-item"]')!.getBoundingClientRect();
           const lastRow = root.querySelector("li:last-child")!.getBoundingClientRect();
@@ -57,6 +63,7 @@ for (const language of ["en", "it"] as const) {
             introWidth: intro.width,
             columnGap: list.left - intro.right,
             stackedGap: list.top - intro.bottom,
+            headerClearance: intro.top - header.getBoundingClientRect().bottom,
             overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
           };
         });
@@ -64,6 +71,7 @@ for (const language of ["en", "it"] as const) {
         expect(archiveLayout.right).toBeGreaterThanOrEqual(19);
         expect(archiveLayout.headerInset).toBeCloseTo(archiveLayout.left, 0);
         expect(archiveLayout.overflow).toBeFalsy();
+        expect(archiveLayout.headerClearance).toBeGreaterThanOrEqual(-0.5);
         if (width >= 761) {
           expect(archiveLayout.introWidth).toBeGreaterThanOrEqual(219);
           expect(archiveLayout.columnGap).toBeGreaterThanOrEqual(39);
@@ -109,6 +117,10 @@ for (const language of ["en", "it"] as const) {
     const archive = page.getByRole("button", { name: t.archive, exact: true });
     await archive.focus();
     await page.keyboard.press("Enter");
+    expect(await archive.evaluate(element => ({
+      style: getComputedStyle(element).outlineStyle,
+      offset: parseFloat(getComputedStyle(element).outlineOffset),
+    }))).toEqual({ style: "solid", offset: -6 });
     await expect(archive).toHaveAttribute("aria-expanded", "true");
     await expect(page.getByText("Flowers iOS Application", { exact: true })).toBeVisible();
 

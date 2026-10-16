@@ -85,14 +85,22 @@ export function App({ language = "en" }: { language?: Language }) {
           </article>)}
           <p className="confidentiality metadata">{t.workPrivacy}</p>
         </div>
-        <div className="toolkit"><h3>{t.skills}</h3><dl>
-          <div><dt>{t.programmingLanguage}</dt><dd>{skills.language}</dd></div>
-          <div><dt>{t.development}</dt><dd>{skills.development}, {t.angular}</dd></div>
-          <div><dt>{t.cloud}</dt><dd>{skills.cloud}</dd></div>
-          <div><dt>{t.tools}</dt><dd>{skills.tools}, {t.containers}</dd></div>
-          <div><dt>{t.practices}</dt><dd>{t.methods}</dd></div>
-          <div><dt>{t.architectures}</dt><dd>{t.architectureDetail}</dd></div>
-        </dl></div>
+        <div className="toolkit" aria-labelledby="toolkit-title"><h3 id="toolkit-title">{t.skills}</h3><div className="toolkit-groups">
+          <section className="toolkit-group" aria-labelledby="daily-tools-title"><h4 id="daily-tools-title">{t.dailyTools}</h4><dl>
+            <div><dt>{t.programmingLanguage}</dt><dd>{skills.language}</dd></div>
+            <div><dt>{t.development}</dt><dd>{skills.development}</dd></div>
+            <div className="toolkit-wide"><dt>{t.cloud}</dt><dd>{skills.cloud}</dd></div>
+            <div><dt>{t.tools}</dt><dd>{skills.tools}, {t.containers}</dd></div>
+            <div><dt>{t.practices}</dt><dd>{t.methods}</dd></div>
+            <div className="toolkit-wide"><dt>{t.architectures}</dt><dd>{t.architectureDetail}</dd></div>
+          </dl></section>
+          <section className="toolkit-group toolkit-other" aria-labelledby="other-tools-title"><h4 id="other-tools-title">{t.otherTools}</h4><p className="metadata">{t.otherToolsIntro}</p><dl>
+            <div><dt>{t.programmingLanguages}</dt><dd>{skills.otherLanguages}</dd></div>
+            <div><dt>{t.frontend}</dt><dd>{skills.frontend}</dd></div>
+            <div><dt>{t.backendData}</dt><dd>{skills.backendData}</dd></div>
+            <div><dt>{t.machineLearning}</dt><dd>{skills.machineLearning}</dd></div>
+          </dl></section>
+        </div></div>
       </section>
 
       <section className="projects-section section" id="projects" aria-labelledby="projects-title">

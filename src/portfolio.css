@@ -61,9 +61,16 @@ p, li, dd { overflow-wrap: break-word; }
 .confidentiality { margin-top: 28px; }
 .toolkit { grid-column: 1 / -1; border-top: 1px solid var(--v-border); padding-top: 40px; display: grid; grid-template-columns: .78fr 1.65fr; gap: 84px; }
 .toolkit h3 { font-size: 24px; }
-.toolkit dl { display: grid; gap: 22px; margin: 0; }
+.toolkit-groups { min-width: 0; display: grid; gap: 32px; }
+.toolkit-group h4 { font-size: 20px; margin-bottom: 24px; }
+.toolkit dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin: 0; }
+.toolkit dl > div { min-width: 0; }
+.toolkit-wide { grid-column: 1 / -1; }
 .toolkit dt { font-weight: 600; font-size: 16px; margin-bottom: 6px; }
 .toolkit dd { margin: 0; font-size: 17px; color: var(--v-text-2); }
+.toolkit-other { padding-top: 32px; border-top: 1px solid var(--v-border); }
+.toolkit-other h4 { margin-bottom: 8px; }
+.toolkit-other > p { margin-bottom: 24px; }
 .projects-section { background: var(--v-beige-2); }
 .projects-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 44px; }
 .projects-heading > p { max-width: 340px; color: var(--v-text-2); font-size: 17px; }
@@ -80,7 +87,20 @@ p, li, dd { overflow-wrap: break-word; }
 .project-tech { margin-top: 16px; }
 .project-links { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; }
 .project-archive { --archive-inset: clamp(20px, 3vw, 32px); margin-top: 32px; }
-.project-archive [data-slot="accordion-trigger"] { padding: 24px var(--archive-inset); gap: 16px; font-size: 17px; }
+.project-archive > [data-slot="accordion-item"] {
+  --acc-accent: var(--v-paper);
+  --mfill: var(--v-paper);
+  background: var(--v-paper);
+  color: var(--v-text);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--v-border);
+  overflow: hidden;
+}
+.project-archive [data-slot="accordion-trigger"] { padding: 24px var(--archive-inset); gap: 16px; font-size: 17px; border-radius: 12px; transition: none; }
+.project-archive [data-slot="accordion-trigger"]:hover { background: var(--v-beige-2); }
+.project-archive [data-slot="accordion-trigger"]:focus-visible { outline: 2px solid var(--portfolio-accent); outline-offset: -6px; }
+.project-archive [data-slot="accordion-indicator"] { width: 20px; height: 20px; padding: 0; border: 0; border-radius: 0; }
+.project-archive [data-slot="accordion-content"] { color: var(--v-text-2); }
 .project-archive [data-slot="accordion-content-inner"] { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 0 var(--archive-inset) var(--archive-inset); }
 .project-archive [data-slot="accordion-content-inner"] > p { font-size: 16px; color: inherit; }
 .project-archive ul { min-width: 0; list-style: none; margin: 0; padding: 0; }
@@ -150,6 +170,7 @@ p, li, dd { overflow-wrap: break-word; }
   .experience-section { grid-template-columns: 1fr; gap: 36px; }
   .section-heading h2 { max-width: 500px; }
   .toolkit { grid-template-columns: 1fr; gap: 28px; }
+  .toolkit dl { grid-template-columns: 1fr; gap: 20px; }
   .job-heading { display: block; }
   .job-heading .metadata { margin-top: 8px; }
   .job-role { margin-top: 12px; }
