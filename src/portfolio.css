@@ -97,7 +97,6 @@ p, li, dd { overflow-wrap: break-word; }
   overflow: hidden;
 }
 .project-archive [data-slot="accordion-trigger"] { padding: 24px var(--archive-inset); gap: 16px; font-size: 17px; border-radius: 12px; transition: none; }
-.project-archive [data-slot="accordion-trigger"]:hover { background: var(--v-beige-2); }
 .project-archive [data-slot="accordion-trigger"]:focus-visible { outline: 2px solid var(--portfolio-accent); outline-offset: -6px; }
 .project-archive [data-slot="accordion-indicator"] { width: 20px; height: 20px; padding: 0; border: 0; border-radius: 0; }
 .project-archive [data-slot="accordion-content"] { color: var(--v-text-2); }

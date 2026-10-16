@@ -31,8 +31,8 @@ The 3 October alignment uses the approved CV summary and separates the toolkit i
 
 - Visual thesis: keep the existing warm paper, ink and olive palette, with quiet surfaces and readable technical copy in both themes.
 - Content plan: introduce the current work without naming the employer in the profile, include the 2025 graduation year, and distinguish everyday work tools from other technologies used in university projects and earlier roles. The user confirmed Kotlin, Scala, Angular, gRPC, RabbitMQ, PostgreSQL, Akka, TensorFlow and PyTorch for that second group; no proficiency scores are implied.
-- Interaction thesis: the project archive keeps a neutral surface when expanded, uses a simple rotating chevron and subtle header hover, and retains an inset keyboard focus indicator. Existing disclosure and theme motion remain; reduced motion is respected.
-- Header hover changes immediately so a theme switch cannot briefly leave pale text on the previous light hover background.
+- Interaction thesis: the project archive keeps a neutral surface when expanded, uses a simple rotating chevron, and retains an inset keyboard focus indicator. Existing disclosure and theme motion remain; reduced motion is respected.
+- The header keeps the panel's background on pointer hover, avoiding a separate coloured strip in both themes.
 
 Navigation anchors, project disclosures, language switch, light/dark switch, native email link and PDF downloads all have real destinations or state changes. Content is local and prerendered, so no synthetic loading/empty states for nonexistent fetching. A recoverable error boundary and useful no-JavaScript content protect the main reader journey. On narrow screens the menu opens in normal flow, closes on destination/Escape, and retains visible focus. Mobile actions are at least 44px tall.
 

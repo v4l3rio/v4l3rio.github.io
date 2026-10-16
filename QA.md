@@ -1,5 +1,10 @@
 # Verification, 2 October 2026
 
+## Archive hover correction, 16 October 2026
+
+- Removed the header hover fill so the archive remains one continuous panel surface, open or closed, in both themes. Keyboard focus and disclosure behavior are preserved.
+- `pnpm build` passes. All eight layout/accessibility checks pass across both languages, both themes and 320, 375, 768 and 1440px. A direct pointer-hover check confirms identical paint before/after hover for the open/closed panel in both themes; the current light-mode screenshot was visually inspected.
+
 ## Profile and UI refinement, 16 October 2026
 
 - Updated both introductions: a more natural opening, current Google Cloud work without the employer name, and graduation explicitly dated 2025. CV HTML, portfolio copy and prerendered text agree.
