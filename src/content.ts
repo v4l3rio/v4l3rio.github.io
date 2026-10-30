@@ -16,7 +16,11 @@ export const copy = {
     skip: "Skip to content", navLabel: "Main navigation", menu: "Menu", close: "Close menu",
     work: "Experience", projects: "Projects", about: "About", contact: "Contact",
     otherLanguage: "Italiano", themeLight: "Switch to light mode", themeDark: "Switch to dark mode",
-    profile: "I’m a software developer, mainly interested in cloud architecture and artificial intelligence. I currently work on Google Cloud projects: I develop backend services in Python and work with clients to understand their needs and decide how to address them. In 2025, I graduated with honours from the University of Bologna with an MSc in Computer Science and Engineering, with a thesis on fairness in machine learning. Outside work, I enjoy cooking, playing video games and spending time with friends.",
+    profile: [
+      "I’m Valerio, a cloud developer. I currently work on Google Cloud projects: I build backend services, mainly in Python but not exclusively, and work directly with clients to understand what they need and how best to approach it.",
+      "I graduated with honours in 2025 from the University of Bologna (Cesena campus), with an MSc in Computer Science and Engineering and a thesis on fairness in machine learning. I’m mostly interested in cloud architecture and artificial intelligence.",
+      "Outside work, I like cooking, 3D printing, video games and collecting. I try to stay active and spend time with friends."
+    ],
     viewWork: "View my projects", download: "Download CV", location: "Cesena, Italy",
     availability: "Remote, hybrid or on-site", focus: "Google Cloud · Python · FastAPI",
     workIntro: "What I do, and where I have worked.", current: "Current role",
@@ -42,7 +46,11 @@ export const copy = {
     skip: "Vai al contenuto", navLabel: "Navigazione principale", menu: "Menu", close: "Chiudi menu",
     work: "Esperienza", projects: "Progetti", about: "Chi sono", contact: "Contatti",
     otherLanguage: "English", themeLight: "Passa alla modalità chiara", themeDark: "Passa alla modalità scura",
-    profile: "Sono uno sviluppatore software e mi interessano soprattutto le architetture cloud e l’intelligenza artificiale. Attualmente mi occupo di progetti su Google Cloud: sviluppo servizi backend in Python e mi confronto con i clienti per capire le loro esigenze e scegliere come affrontarle. Mi sono laureato con lode in Ingegneria e Scienze Informatiche all’Università di Bologna nel 2025, con una tesi sull’equità nel machine learning. Fuori dal lavoro mi piace cucinare, giocare ai videogiochi e stare in compagnia.",
+    profile: [
+      "Sono Valerio, sviluppatore cloud. Attualmente mi occupo di progetti su Google Cloud: sviluppo servizi backend, principalmente in Python ma non solo, e lavoro a contatto con i clienti per capire cosa serve loro e come affrontarlo.",
+      "Mi sono laureato con lode nel 2025 all’Università di Bologna (campus di Cesena), con la magistrale in Ingegneria e Scienze Informatiche e una tesi sulla fairness nel machine learning. Mi interessano soprattutto l’architettura cloud e l’intelligenza artificiale.",
+      "Fuori dal lavoro mi piace cucinare, stampare in 3D, giocare ai videogiochi e collezionare. Cerco di tenermi in movimento e di passare tempo con gli amici."
+    ],
     viewWork: "Vedi i miei progetti", download: "Scarica il CV", location: "Cesena, Emilia-Romagna",
     availability: "Remoto, ibrido o in presenza", focus: "Google Cloud · Python · FastAPI",
     workIntro: "Di cosa mi occupo e dove ho lavorato.", current: "Ruolo attuale",

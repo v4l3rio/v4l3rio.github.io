@@ -39,6 +39,7 @@ p, li, dd { overflow-wrap: break-word; }
 .hero h1 { font-size: clamp(72px, 8.4vw, 116px); letter-spacing: -.065em; line-height: .96; margin-bottom: 36px; }
 .name-dot { color: var(--portfolio-accent); }
 .hero-profile { max-width: 600px; font-size: 19px; line-height: 1.65; }
+.hero-profile p + p { margin-top: 1em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .v-btn { text-decoration: none; min-height: 44px; transition: transform 160ms; }
 .v-btn svg { width: 18px; height: 18px; }

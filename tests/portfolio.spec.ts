@@ -11,7 +11,7 @@ for (const language of ["en", "it"] as const) {
       await page.setViewportSize({ width, height: 1000 });
       await page.goto(language === "it" ? "/it/" : "/");
       await page.evaluate(() => document.fonts.ready);
-      await expect(page.locator(".hero-profile")).toHaveText(copy[language].profile);
+      await expect(page.locator(".hero-profile p")).toHaveText(copy[language].profile);
       await expect(page.locator("html")).toHaveAttribute("lang", language);
       for (const mode of ["light", "dark"] as const) {
         if (mode === "dark") await page.getByRole("button", { name: copy[language].themeDark }).click();
@@ -172,7 +172,7 @@ for (const language of ["en", "it"] as const) {
     await expect(page).toHaveURL(language === "it" ? /\/it\/$/ : /4173\/$/);
     await page.locator(".language-link").click();
     await expect(page.locator("html")).toHaveAttribute("lang", language === "it" ? "en" : "it");
-    await expect(page.locator(".hero-profile")).toHaveText(copy[language === "it" ? "en" : "it"].profile);
+    await expect(page.locator(".hero-profile p")).toHaveText(copy[language === "it" ? "en" : "it"].profile);
   });
 }
 

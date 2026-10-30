@@ -62,7 +62,9 @@ export function App({ language = "en" }: { language?: Language }) {
         <div className="hero-copy">
           <p className="hero-role">Cloud Developer / Cloud Engineer</p>
           <h1 id="hero-title">Valerio<br />Di Zio<span className="name-dot">.</span></h1>
-          <p className="hero-profile">{t.profile}</p>
+          <div className="hero-profile">
+            {t.profile.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          </div>
           <div className="hero-actions">
             <Button data-stable-hit="" asChild size="lg" shape="card"><a href="#projects">{t.viewWork}</a></Button>
             <Button data-motion="off" data-stable-hit="" asChild size="lg" variant="outline" shape="card"><a href={links.cv[language]} download>{t.download}<Icon name="download" aria-hidden="true" feedback={false} /></a></Button>
