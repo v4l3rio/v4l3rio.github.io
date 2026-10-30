@@ -62,16 +62,12 @@ p, li, dd { overflow-wrap: break-word; }
 .confidentiality { margin-top: 28px; }
 .toolkit { grid-column: 1 / -1; border-top: 1px solid var(--v-border); padding-top: 40px; display: grid; grid-template-columns: .78fr 1.65fr; gap: 84px; }
 .toolkit h3 { font-size: 24px; }
-.toolkit-groups { min-width: 0; display: grid; gap: 32px; }
-.toolkit-group h4 { font-size: 20px; margin-bottom: 24px; }
-.toolkit dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin: 0; }
+.toolkit-heading .metadata { margin-top: 12px; max-width: 30ch; }
+.toolkit dl { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin: 0; }
 .toolkit dl > div { min-width: 0; }
 .toolkit-wide { grid-column: 1 / -1; }
 .toolkit dt { font-weight: 600; font-size: 16px; margin-bottom: 6px; }
 .toolkit dd { margin: 0; font-size: 17px; color: var(--v-text-2); }
-.toolkit-other { padding-top: 32px; border-top: 1px solid var(--v-border); }
-.toolkit-other h4 { margin-bottom: 8px; }
-.toolkit-other > p { margin-bottom: 24px; }
 .projects-section { background: var(--v-beige-2); }
 .projects-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 44px; }
 .projects-heading > p { max-width: 340px; color: var(--v-text-2); font-size: 17px; }

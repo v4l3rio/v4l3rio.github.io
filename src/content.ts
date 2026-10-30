@@ -25,11 +25,7 @@ export const copy = {
     availability: "Remote, hybrid or on-site", focus: "Google Cloud · Python · FastAPI",
     workIntro: "What I do, and where I have worked.", current: "Current role",
     workPrivacy: "Client work is described in general terms to respect confidentiality.",
-    skills: "Technologies & skills", dailyTools: "In my day-to-day work", otherTools: "Other technologies", otherToolsIntro: "Used in university projects and previous roles.",
-    programmingLanguage: "Language", programmingLanguages: "Languages", frontend: "Frontend", backendData: "Backend & data", machineLearning: "Machine learning", development: "Frameworks, libraries & SDKs", cloud: "Google Cloud",
-    tools: "Tools", practices: "Development practices", architectures: "Architectures",
-    angular: "Angular (previous experience)", containers: "containers", methods: "CI/CD, automated testing, Agile",
-    architectureDetail: "Serverless, microservices, hexagonal architecture",
+    skills: "Technologies & skills", skillsIntro: "Technologies used at work and in university and personal projects.",
     projectsIntro: "Selected work from my university studies, with public code to read.", thesis: "MSc thesis",
     repository: "GitHub repository", dataset: "Research dataset", documentation: "Documentation",
     archive: "Earlier university projects", archiveIntro: "Other projects from my studies, kept here as part of my learning history.",
@@ -55,11 +51,7 @@ export const copy = {
     availability: "Remoto, ibrido o in presenza", focus: "Google Cloud · Python · FastAPI",
     workIntro: "Di cosa mi occupo e dove ho lavorato.", current: "Ruolo attuale",
     workPrivacy: "Le attività per i clienti sono descritte in termini generali, nel rispetto della riservatezza.",
-    skills: "Tecnologie e competenze", dailyTools: "Nel lavoro quotidiano", otherTools: "Altre tecnologie", otherToolsIntro: "Usate nei progetti universitari e nelle esperienze precedenti.",
-    programmingLanguage: "Linguaggio", programmingLanguages: "Linguaggi", frontend: "Frontend", backendData: "Backend e dati", machineLearning: "Machine learning", development: "Framework, librerie e SDK", cloud: "Google Cloud",
-    tools: "Strumenti", practices: "Pratiche di sviluppo", architectures: "Architetture",
-    angular: "Angular (esperienza precedente)", containers: "container", methods: "CI/CD, test automatici, Agile",
-    architectureDetail: "Serverless, microservizi, architettura esagonale",
+    skills: "Tecnologie e competenze", skillsIntro: "Tecnologie utilizzate nel lavoro, nei progetti universitari e personali.",
     projectsIntro: "Una selezione dei progetti universitari, con codice pubblico da consultare.", thesis: "Tesi magistrale",
     repository: "Repository GitHub", dataset: "Dataset di ricerca", documentation: "Documentazione",
     archive: "Altri progetti universitari", archiveIntro: "Altri lavori realizzati durante gli studi, conservati come parte del mio percorso.",
@@ -109,16 +101,110 @@ export const experience: { company: string; role: Localized; date: Localized; de
   },
 ];
 
-export const skills = {
-  language: "Python",
-  development: "FastAPI, Pydantic, pytest, Google Agent Development Kit (ADK)",
-  cloud: "Cloud Run, Cloud Storage, BigQuery, Firestore, Pub/Sub, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging",
-  tools: "Git, GitHub Actions, Cloud Build",
-  otherLanguages: "Kotlin, Scala",
-  frontend: "Angular",
-  backendData: "gRPC, RabbitMQ, PostgreSQL, Akka Typed",
-  machineLearning: "TensorFlow, PyTorch",
-};
+export const skills: { id: string; label: Localized; value: Localized; wide?: boolean }[] = [
+  {
+    "id": "languages",
+    "label": {
+      "en": "Languages",
+      "it": "Linguaggi"
+    },
+    "value": {
+      "en": "Python, Kotlin, Scala, Java, TypeScript, JavaScript, SQL.",
+      "it": "Python, Kotlin, Scala, Java, TypeScript, JavaScript, SQL."
+    }
+  },
+  {
+    "id": "backend",
+    "label": {
+      "en": "Backend & integrations",
+      "it": "Backend e integrazioni"
+    },
+    "value": {
+      "en": "FastAPI, Pydantic, Node.js, Express, gRPC, RabbitMQ, Socket.IO, Akka Typed.",
+      "it": "FastAPI, Pydantic, Node.js, Express, gRPC, RabbitMQ, Socket.IO, Akka Typed."
+    }
+  },
+  {
+    "id": "frontend",
+    "label": {
+      "en": "Frontend",
+      "it": "Frontend"
+    },
+    "value": {
+      "en": "Angular (previous experience), Vue.js, React, HTML, CSS.",
+      "it": "Angular (esperienza precedente), Vue.js, React, HTML, CSS."
+    }
+  },
+  {
+    "id": "data",
+    "label": {
+      "en": "Data",
+      "it": "Dati"
+    },
+    "value": {
+      "en": "PostgreSQL, MongoDB, NumPy, pandas, SciPy, Apache Spark / MLlib, Amazon S3.",
+      "it": "PostgreSQL, MongoDB, NumPy, pandas, SciPy, Apache Spark / MLlib, Amazon S3."
+    }
+  },
+  {
+    "id": "ai",
+    "label": {
+      "en": "AI & machine learning",
+      "it": "AI e machine learning"
+    },
+    "value": {
+      "en": "Google ADK, Datapizza AI, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, MidiTok; fairness and reinforcement learning.",
+      "it": "Google ADK, Datapizza AI, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, MidiTok; fairness e reinforcement learning."
+    },
+    "wide": true
+  },
+  {
+    "id": "cloud",
+    "label": {
+      "en": "Google Cloud (GCP)",
+      "it": "Google Cloud (GCP)"
+    },
+    "value": {
+      "en": "Cloud Run, Cloud Storage, BigQuery, Firestore, Pub/Sub, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging.",
+      "it": "Cloud Run, Cloud Storage, BigQuery, Firestore, Pub/Sub, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging."
+    },
+    "wide": true
+  },
+  {
+    "id": "devops",
+    "label": {
+      "en": "DevOps & build",
+      "it": "DevOps e build"
+    },
+    "value": {
+      "en": "Git, Docker, Docker Compose, GitHub Actions, Cloud Build, CI/CD, Gradle, sbt, Poetry.",
+      "it": "Git, Docker, Docker Compose, GitHub Actions, Cloud Build, CI/CD, Gradle, sbt, Poetry."
+    }
+  },
+  {
+    "id": "testing",
+    "label": {
+      "en": "Testing",
+      "it": "Test"
+    },
+    "value": {
+      "en": "pytest, unittest, ScalaTest, Kotest, JUnit, Cucumber (BDD), Playwright.",
+      "it": "pytest, unittest, ScalaTest, Kotest, JUnit, Cucumber (BDD), Playwright."
+    }
+  },
+  {
+    "id": "architecture",
+    "label": {
+      "en": "Architecture & methods",
+      "it": "Architetture e metodi"
+    },
+    "value": {
+      "en": "Serverless, microservices, hexagonal architecture, event-driven systems, functional programming, DSLs, Agile/Scrum.",
+      "it": "Serverless, microservizi, architettura esagonale, sistemi a eventi, programmazione funzionale, DSL, Agile/Scrum."
+    },
+    "wide": true
+  }
+];
 
 export const projects = [
   {
