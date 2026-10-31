@@ -1,0 +1,570 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "en",
+        "it"
+      ]
+    },
+    "text": {
+      "type": "object",
+      "properties": {
+        "skip": {
+          "type": "string"
+        },
+        "navLabel": {
+          "type": "string"
+        },
+        "menu": {
+          "type": "string"
+        },
+        "close": {
+          "type": "string"
+        },
+        "work": {
+          "type": "string"
+        },
+        "projects": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "otherLanguage": {
+          "type": "string"
+        },
+        "themeLight": {
+          "type": "string"
+        },
+        "themeDark": {
+          "type": "string"
+        },
+        "viewWork": {
+          "type": "string"
+        },
+        "download": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "focus": {
+          "type": "string"
+        },
+        "workIntro": {
+          "type": "string"
+        },
+        "current": {
+          "type": "string"
+        },
+        "workPrivacy": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "string"
+        },
+        "skillsIntro": {
+          "type": "string"
+        },
+        "projectsIntro": {
+          "type": "string"
+        },
+        "thesis": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "dataset": {
+          "type": "string"
+        },
+        "documentation": {
+          "type": "string"
+        },
+        "archive": {
+          "type": "string"
+        },
+        "archiveIntro": {
+          "type": "string"
+        },
+        "education": {
+          "type": "string"
+        },
+        "degree": {
+          "type": "string"
+        },
+        "university": {
+          "type": "string"
+        },
+        "grade": {
+          "type": "string"
+        },
+        "languages": {
+          "type": "string"
+        },
+        "languageDetail": {
+          "type": "string"
+        },
+        "interests": {
+          "type": "string"
+        },
+        "interestsDetail": {
+          "type": "string"
+        },
+        "qualifications": {
+          "type": "string"
+        },
+        "credentials": {
+          "type": "string"
+        },
+        "credential": {
+          "type": "string"
+        },
+        "completion": {
+          "type": "string"
+        },
+        "preparation": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "contactTitle": {
+          "type": "string"
+        },
+        "contactCopy": {
+          "type": "string"
+        },
+        "italianCV": {
+          "type": "string"
+        },
+        "englishCV": {
+          "type": "string"
+        },
+        "footer": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "errorCopy": {
+          "type": "string"
+        },
+        "retry": {
+          "type": "string"
+        },
+        "universityWork": {
+          "type": "string"
+        },
+        "selectedProjects": {
+          "type": "string"
+        },
+        "cvTitle": {
+          "type": "string"
+        },
+        "cvFormat": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string"
+        },
+        "linkedin": {
+          "type": "string"
+        },
+        "home": {
+          "type": "string"
+        },
+        "copyright": {
+          "type": "string"
+        },
+        "preparingPdf": {
+          "type": "string"
+        },
+        "downloadError": {
+          "type": "string"
+        },
+        "contentError": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "skip",
+        "navLabel",
+        "menu",
+        "close",
+        "work",
+        "projects",
+        "about",
+        "contact",
+        "otherLanguage",
+        "themeLight",
+        "themeDark",
+        "viewWork",
+        "download",
+        "location",
+        "availability",
+        "focus",
+        "workIntro",
+        "current",
+        "workPrivacy",
+        "skills",
+        "skillsIntro",
+        "projectsIntro",
+        "thesis",
+        "repository",
+        "dataset",
+        "documentation",
+        "archive",
+        "archiveIntro",
+        "education",
+        "degree",
+        "university",
+        "grade",
+        "languages",
+        "languageDetail",
+        "interests",
+        "interestsDetail",
+        "qualifications",
+        "credentials",
+        "credential",
+        "completion",
+        "preparation",
+        "target",
+        "contactTitle",
+        "contactCopy",
+        "italianCV",
+        "englishCV",
+        "footer",
+        "error",
+        "errorCopy",
+        "retry",
+        "universityWork",
+        "selectedProjects",
+        "cvTitle",
+        "cvFormat",
+        "github",
+        "linkedin",
+        "home",
+        "copyright",
+        "preparingPdf",
+        "downloadError",
+        "contentError"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "socialDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "socialDescription"
+      ],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+        },
+        "githubLabel": {
+          "type": "string"
+        },
+        "githubUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "linkedinUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "websiteUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name",
+        "role",
+        "phone",
+        "email",
+        "githubLabel",
+        "githubUrl",
+        "linkedinUrl",
+        "websiteUrl"
+      ],
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "education": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "company",
+          "role",
+          "date",
+          "details"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "wide": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tech": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string",
+            "format": "uri"
+          },
+          "proof": {
+            "type": "string",
+            "format": "uri"
+          },
+          "proofType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "tech",
+          "category",
+          "description",
+          "repo"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "archive": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "name",
+          "year"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "credentials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "credentialId": {
+            "type": "string"
+          },
+          "inPreparation": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "title",
+          "issuer",
+          "date"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "pdf": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+\\.pdf$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "profileHeading": {
+          "type": "string"
+        },
+        "experienceHeading": {
+          "type": "string"
+        },
+        "skillsHeading": {
+          "type": "string"
+        },
+        "projectsHeading": {
+          "type": "string"
+        },
+        "credentialsHeading": {
+          "type": "string"
+        },
+        "includeArchive": {
+          "type": "boolean"
+        },
+        "includeInterests": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "filename",
+        "title",
+        "profileHeading",
+        "experienceHeading",
+        "skillsHeading",
+        "projectsHeading",
+        "credentialsHeading",
+        "includeArchive",
+        "includeInterests"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "language",
+    "text",
+    "metadata",
+    "person",
+    "profile",
+    "education",
+    "experience",
+    "skills",
+    "projects",
+    "archive",
+    "credentials",
+    "pdf"
+  ],
+  "additionalProperties": false
+}

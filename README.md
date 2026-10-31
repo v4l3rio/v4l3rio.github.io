@@ -1,6 +1,6 @@
 # Valerio Di Zio
 
-Personal portfolio, updated from the approved CV on 2 October 2026. English at `/`, Italian at `/it/`.
+Personal portfolio and dynamically generated CV, maintained through English and Italian JSON files. English at `/`, Italian at `/it/`.
 
 ## Local preview
 
@@ -18,13 +18,26 @@ pnpm build
 pnpm preview
 ```
 
-## Editing
+## Editing content
 
-- `src/content.ts`: bilingual copy, experience, projects, credentials and links.
+All current site and CV content lives in two JSON files:
+
+- [`public/content/cv-it.json`](public/content/cv-it.json)
+- [`public/content/cv-en.json`](public/content/cv-en.json)
+
+Read [GUIDA-CONTENUTI.md](GUIDA-CONTENUTI.md) for the editing and publishing steps. You do not need to edit React, HTML or upload replacement PDFs.
+
+The browser refreshes the current language JSON on page load. Each download fetches the chosen language JSON again and generates the PDF locally in the browser. The PDF renderer and fonts are loaded only when requested. No external PDF service receives the CV data.
+
+`pnpm build` validates both JSON files, prerenders both pages and generates the static PDF fallbacks from the same data and the same renderer. These copies support direct PDF URLs and visitors without JavaScript. PDFs are build outputs, not separately maintained source files. Future content can flow onto more than two pages.
+
+Structure and implementation:
+
+- `src/resume-schema.ts`: content validation and JSON schema generation.
 - `src/App.tsx`: page structure and interactions.
-- `src/portfolio.css`: portfolio-specific responsive layout.
-- `public/cv/`: approved downloadable ATS PDFs. Replace them when the CV changes.
-- `DESIGN.md`: visual direction and content boundaries.
+- `src/ResumePdf.tsx`: shared browser/build PDF renderer.
+- `src/portfolio.css`: responsive website layout.
+- `DESIGN.md`: visual direction.
 - `QA.md`: recorded verification.
 
 Cojeev was registered using `pnpm dlx shadcn@latest registry add @000h-cojeev`. Button, Accordion, ShapeArtwork and their dependencies were installed from that registry. Original components live in `src/components/ui`; tokens, styles, licensed fonts and motion helpers are under `src/styles` and `src/lib`. Fonts are served locally. The page does not load analytics, third-party fonts or a fake contact form. The former static site is retained in `legacy/` and is not included in the production build.

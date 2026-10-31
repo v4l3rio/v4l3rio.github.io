@@ -51,3 +51,14 @@ The test source now checks the expanded archive's insets, column width, stacking
 ## Build warning
 
 Vite reports a main JavaScript chunk above 500kB before compression. The build succeeds. No loading-performance or Lighthouse score is claimed.
+
+## JSON content and dynamic CV — 31 October 2026
+
+- Canonical content moved to `public/content/cv-it.json` and `public/content/cv-en.json`, prefilled from the existing website. User-facing text, personal details, labels, metadata, profile paragraphs, experience, skills, projects, archive, credentials and PDF headings are editable there.
+- Added an Italian editing/publishing guide and a generated JSON schema. Build validation reports the invalid file/field before deployment.
+- Website refreshes its language JSON after hydration; each PDF download fetches the chosen language again. The renderer is loaded on demand and creates a local Blob download. No external PDF service is used.
+- The same renderer generates direct-link/no-JavaScript PDFs during each build. Removed manually maintained PDF binaries from the source tree.
+- Full build/typecheck passed. All 16 browser tests passed, including both languages, both themes, 320/375/768/1440px, accessibility, keyboard controls, language switch, downloads, no-JavaScript pages, zoom and reduced motion.
+- New browser tests modify the JSON response without rebuilding, then extract downloaded PDF text and verify the changed profile, a newly added job and a newly added skill. Confirmed Blob downloads, independent language downloads, 35 extra profile paragraphs spanning additional PDF pages, and clear errors for invalid JSON.
+- Current generated PDFs each contain two A4 pages. All profile, skill, experience and project text was checked against the JSON with pdfplumber; geometric checks found no clipped or overlapping words. Both PDFs were rendered and all four pages inspected.
+- React review: PDF renderer deferred to dynamic import, independent JSON/renderer loading in parallel, validated fetches, effect cleanup guards, no hooks inside conditionals, native links retained for no-JavaScript downloads, busy/error feedback, object URLs revoked after downloads, and locally hosted embedded PDF fonts with the included license.

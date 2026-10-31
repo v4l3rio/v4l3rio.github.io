@@ -32,3 +32,5 @@ dist/
 .qa/
 test-results/
 playwright-report/
+
+.pdf-build/

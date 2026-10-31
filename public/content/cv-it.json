@@ -1,0 +1,261 @@
+{
+  "$schema": "./resume.schema.json",
+  "language": "it",
+  "text": {
+    "skip": "Vai al contenuto",
+    "navLabel": "Navigazione principale",
+    "menu": "Menu",
+    "close": "Chiudi menu",
+    "work": "Esperienza",
+    "projects": "Progetti",
+    "about": "Chi sono",
+    "contact": "Contatti",
+    "otherLanguage": "English",
+    "themeLight": "Passa alla modalità chiara",
+    "themeDark": "Passa alla modalità scura",
+    "viewWork": "Vedi i miei progetti",
+    "download": "Scarica il CV",
+    "location": "Cesena, Emilia-Romagna",
+    "availability": "Remoto, ibrido o in presenza",
+    "focus": "Google Cloud · Python · FastAPI",
+    "workIntro": "Di cosa mi occupo e dove ho lavorato.",
+    "current": "Ruolo attuale",
+    "workPrivacy": "Le attività per i clienti sono descritte in termini generali, nel rispetto della riservatezza.",
+    "skills": "Tecnologie e competenze",
+    "skillsIntro": "Tecnologie utilizzate nel lavoro, nei progetti universitari e personali.",
+    "projectsIntro": "Una selezione dei progetti universitari, con codice pubblico da consultare.",
+    "thesis": "Tesi magistrale",
+    "repository": "Repository GitHub",
+    "dataset": "Dataset di ricerca",
+    "documentation": "Documentazione",
+    "archive": "Altri progetti universitari",
+    "archiveIntro": "Altri lavori realizzati durante gli studi, conservati come parte del mio percorso.",
+    "education": "Formazione",
+    "degree": "Laurea magistrale in Ingegneria e Scienze Informatiche",
+    "university": "Università di Bologna, Cesena",
+    "grade": "110/110 e lode",
+    "languages": "Lingue",
+    "languageDetail": "Italiano, madrelingua. Inglese, B2 (esame universitario).",
+    "interests": "Fuori dal lavoro",
+    "interestsDetail": "Mi piacciono la stampa 3D, la palestra, i videogiochi e il collezionismo.",
+    "qualifications": "Qualcosa in più su di me.",
+    "credentials": "Certificazioni e formazione",
+    "credential": "Vedi credenziale",
+    "completion": "Attestato di completamento",
+    "preparation": "In preparazione",
+    "target": "Obiettivo: fine ottobre 2026. Esame non ancora prenotato.",
+    "contactTitle": "Parliamone.",
+    "contactCopy": "Per parlare di un’opportunità, di un progetto o di un interesse in comune, puoi scrivermi qui.",
+    "italianCV": "CV in italiano",
+    "englishCV": "CV in inglese",
+    "footer": "Valerio Di Zio · Cesena, Italia",
+    "error": "Non è stato possibile caricare la pagina interattiva.",
+    "errorCopy": "Puoi comunque scaricare il CV o contattarmi via email.",
+    "retry": "Ricarica la pagina",
+    "universityWork": "Lavori universitari",
+    "selectedProjects": "Progetti selezionati.",
+    "cvTitle": "Curriculum vitae",
+    "cvFormat": "PDF · Formato compatibile con ATS",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "home": "Valerio Di Zio, home",
+    "copyright": "© 2026",
+    "preparingPdf": "Preparazione PDF…",
+    "downloadError": "Non è stato possibile generare il CV. Riprova.",
+    "contentError": "Non è stato possibile aggiornare i contenuti. Ricarica la pagina."
+  },
+  "person": {
+    "name": "Valerio Di Zio",
+    "role": "Cloud Developer / Cloud Engineer",
+    "phone": "+39 351 900 6333",
+    "email": "diziovalerio@gmail.com",
+    "githubLabel": "GitHub / v4l3rio",
+    "githubUrl": "https://github.com/v4l3rio",
+    "linkedinUrl": "https://www.linkedin.com/in/valerio-di-zio-a343b8217",
+    "websiteUrl": "https://v4l3rio.github.io"
+  },
+  "profile": [
+    "Sono Valerio, sviluppatore cloud. Attualmente mi occupo di progetti su Google Cloud: sviluppo servizi backend, principalmente in Python ma non solo, e lavoro a contatto con i clienti per capire cosa serve loro e come affrontarlo.",
+    "Mi sono laureato con lode nel 2025 all’Università di Bologna (campus di Cesena), con la magistrale in Ingegneria e Scienze Informatiche e una tesi sulla fairness nel machine learning. Mi interessano soprattutto l’architettura cloud e l’intelligenza artificiale.",
+    "Fuori dal lavoro mi piace cucinare, stampare in 3D, giocare ai videogiochi e collezionare. Cerco di tenermi in movimento e di passare tempo con gli amici."
+  ],
+  "education": {
+    "date": "2022 – 2025"
+  },
+  "experience": [
+    {
+      "company": "Go Reply",
+      "role": "Cloud Developer / IT Consultant",
+      "date": "Settembre 2025 – oggi",
+      "details": [
+        "Contribuisco alla progettazione e allo sviluppo di soluzioni su Google Cloud per i clienti, dalla raccolta dei requisiti alla valutazione di POC e scelte architetturali.",
+        "Realizzo servizi Python e FastAPI per applicazioni serverless, elaborazione dati e integrazioni cloud.",
+        "Sviluppo agenti con Google ADK integrati con BigQuery e contribuisco a CI/CD, IAM, monitoraggio, logging, troubleshooting e supporto tecnico."
+      ]
+    },
+    {
+      "company": "SER.IN.AR",
+      "role": "Formatore informatico",
+      "date": "2024 – 2025",
+      "details": [
+        "Ho tenuto quattro corsi per quattro gruppi: Excel base per personale scolastico, robotica LEGO Mindstorms per una classe di scuola media e programmazione Snap per due classi di scuola primaria."
+      ]
+    },
+    {
+      "company": "Visup",
+      "role": "Frontend Developer",
+      "date": "Maggio – dicembre 2023",
+      "details": [
+        "Ho sviluppato il frontend Angular di una dashboard di visualizzazione dei dati per l’Industria 4.0, collaborando in un team Agile con Git e CI/CD."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "languages",
+      "label": "Linguaggi",
+      "value": "Python, Kotlin, Scala, Java, TypeScript, JavaScript, SQL."
+    },
+    {
+      "id": "backend",
+      "label": "Backend e integrazioni",
+      "value": "FastAPI, Pydantic, Node.js, Express, gRPC, RabbitMQ, Socket.IO, Akka Typed."
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "value": "Angular (esperienza precedente), Vue.js, React, HTML, CSS."
+    },
+    {
+      "id": "data",
+      "label": "Dati",
+      "value": "PostgreSQL, MongoDB, NumPy, pandas, SciPy, Apache Spark / MLlib, Amazon S3."
+    },
+    {
+      "id": "ai",
+      "label": "AI e machine learning",
+      "value": "Google ADK, Datapizza AI, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, MidiTok; fairness e reinforcement learning.",
+      "wide": true
+    },
+    {
+      "id": "cloud",
+      "label": "Google Cloud (GCP)",
+      "value": "Cloud Run, Cloud Storage, BigQuery, Firestore, Pub/Sub, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging.",
+      "wide": true
+    },
+    {
+      "id": "devops",
+      "label": "DevOps e build",
+      "value": "Git, Docker, Docker Compose, GitHub Actions, Cloud Build, CI/CD, Gradle, sbt, Poetry."
+    },
+    {
+      "id": "testing",
+      "label": "Test",
+      "value": "pytest, unittest, ScalaTest, Kotest, JUnit, Cucumber (BDD), Playwright."
+    },
+    {
+      "id": "architecture",
+      "label": "Architetture e metodi",
+      "value": "Serverless, microservizi, architettura esagonale, sistemi a eventi, programmazione funzionale, DSL, Agile/Scrum.",
+      "wide": true
+    }
+  ],
+  "projects": [
+    {
+      "name": "FairLib",
+      "tech": "Python · Machine learning fairness",
+      "category": "Fairness nel machine learning",
+      "description": "Per la mia tesi magistrale ho lavorato a una libreria Python che applica tecniche di fairness in pre-processing e in-processing, integrando e migliorando l’implementazione esistente.",
+      "note": "La libreria è stata utilizzata nel progetto europeo AEQUITAS. Sono indicato come contributore a un dataset di ricerca del progetto su Zenodo.",
+      "repo": "https://github.com/pikalab-unibo-students/master-thesis-dizio-ay2324",
+      "proof": "https://zenodo.org/records/11171863",
+      "proofType": "dataset"
+    },
+    {
+      "name": "PositionPal",
+      "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
+      "category": "Gestione utenti",
+      "description": "Mi sono occupato del microservizio per registrazione e profilo utenti, con architettura esagonale, test automatici e contributi alla pipeline CI/CD, all’interno di un progetto di gruppo.",
+      "repo": "https://github.com/position-pal/user-service",
+      "proof": "https://position-pal.github.io/",
+      "proofType": "documentation"
+    },
+    {
+      "name": "NesGen",
+      "tech": "Python · TensorFlow · PyTorch · MidiTok",
+      "category": "Musica generativa",
+      "description": "Approcci Transformer e GAN per generare musica MIDI in stile NES, con tokenizzazione e fine-tuning sul dataset NES-MDB.",
+      "repo": "https://github.com/roostico/NesGen"
+    },
+    {
+      "name": "Scooby",
+      "tech": "Scala 3 · Akka Typed · DSL",
+      "category": "Web crawler",
+      "description": "Crawler e scraper con DSL interna per navigazione, estrazione ed export. Akka Typed gestisce l’esecuzione concorrente.",
+      "repo": "https://github.com/roostico/scooby"
+    }
+  ],
+  "archive": [
+    {
+      "name": "Sentiment Analysis",
+      "year": "2024",
+      "url": "https://github.com/v4l3rio/bigData-project"
+    },
+    {
+      "name": "Collaborative Whiteboard",
+      "year": "2023",
+      "url": "https://github.com/v4l3rio/Progetto-ASW-CollaborativeWhiteboard"
+    },
+    {
+      "name": "Flowers iOS Application",
+      "year": "2022"
+    },
+    {
+      "name": "2121: The Last Man Standing",
+      "year": "2020",
+      "url": "https://github.com/v4l3rio/OOP20-2121TLMS"
+    }
+  ],
+  "credentials": [
+    {
+      "title": "Certified Partner Specialist Gemini Enterprise Deployment",
+      "issuer": "Google Cloud",
+      "date": "Settembre 2026 – marzo 2027",
+      "url": "https://www.credly.com/badges/c3b2ec06-2f65-411f-9cd0-0eaa7604f031/linked_in_profile"
+    },
+    {
+      "title": "Generative AI Leader Certification",
+      "issuer": "Google Cloud",
+      "date": "Novembre 2025 – novembre 2028",
+      "url": "https://www.credly.com/badges/e2c8dc34-88da-40cd-a4fd-f941b3a077f7/linked_in_profile"
+    },
+    {
+      "title": "Claude 101",
+      "issuer": "Anthropic",
+      "date": "Aprile 2026",
+      "credentialId": "s8t7chuqcvas"
+    },
+    {
+      "title": "Professional Cloud Developer",
+      "issuer": "Google Cloud",
+      "date": "Obiettivo: fine ottobre 2026. Esame non ancora prenotato.",
+      "inPreparation": true
+    }
+  ],
+  "pdf": {
+    "filename": "Valerio_Di_Zio_CV_ATS_IT.pdf",
+    "title": "Curriculum vitae",
+    "profileHeading": "Profilo professionale",
+    "experienceHeading": "Esperienza professionale",
+    "skillsHeading": "Competenze tecniche",
+    "projectsHeading": "Progetti selezionati",
+    "credentialsHeading": "Certificazioni",
+    "includeArchive": false,
+    "includeInterests": false
+  },
+  "metadata": {
+    "title": "Valerio Di Zio | Cloud Developer & Cloud Engineer",
+    "description": "Valerio Di Zio, Cloud Developer a Cesena. Google Cloud, Python e FastAPI. Esperienza professionale, progetti pubblici e CV scaricabile.",
+    "socialDescription": "Google Cloud, Python e FastAPI. Esperienza, progetti pubblici e CV."
+  }
+}
