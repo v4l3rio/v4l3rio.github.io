@@ -17,43 +17,43 @@
     "download": "Download CV",
     "location": "Cesena, Italy",
     "availability": "Remote, hybrid or on-site",
-    "focus": "Google Cloud · Python · FastAPI",
-    "workIntro": "What I do, and where I have worked.",
+    "focus": "Google Cloud · Python · AI agents",
+    "workIntro": "What I do, and where I’ve worked.",
     "current": "Current role",
-    "workPrivacy": "Client work is described in general terms to respect confidentiality.",
+    "workPrivacy": "To respect confidentiality, client work is described in general terms.",
     "skills": "Technologies & skills",
-    "skillsIntro": "Technologies used at work and in university and personal projects.",
-    "projectsIntro": "Selected work from my university studies, with public code to read.",
+    "skillsIntro": "The tools I use at work, and the ones I’ve picked up through university and personal projects.",
+    "projectsIntro": "A selection of the most meaningful work from my university years. The code is public, so feel free to take a look.",
     "thesis": "MSc thesis",
     "repository": "GitHub repository",
     "dataset": "Research dataset",
     "documentation": "Documentation",
     "archive": "Earlier university projects",
-    "archiveIntro": "Other projects from my studies, kept here as part of my learning history.",
+    "archiveIntro": "More work from my student years, kept here because it’s part of how I got to where I am.",
     "education": "Education",
     "degree": "MSc in Computer Science and Engineering",
     "university": "University of Bologna, Cesena",
     "grade": "Final grade: 110/110 cum laude (highest distinction)",
     "languages": "Languages",
-    "languageDetail": "Italian, native. English, B2 (university exam).",
+    "languageDetail": "Italian is my native language. English is B2, assessed through a university exam.",
     "interests": "Away from the keyboard",
-    "interestsDetail": "I enjoy 3D printing, going to the gym, video games and collecting.",
+    "interestsDetail": "I cook, 3D print, play video games, collect things and go to the gym.",
     "qualifications": "A little more about me.",
     "credentials": "Certifications & learning",
     "credential": "View credential",
     "completion": "Certificate of completion",
     "preparation": "In preparation",
-    "target": "Target: late October 2026. Exam not yet booked.",
+    "target": "I’m preparing for the exam.",
     "contactTitle": "Say hello.",
-    "contactCopy": "To discuss a role, a project or something we have in common, you can reach me here.",
+    "contactCopy": "If you have a role, a project or just something you’d like to talk about, write to me. I’m always happy to chat.",
     "italianCV": "CV in Italian",
     "englishCV": "CV in English",
     "footer": "Valerio Di Zio · Cesena, Italy",
-    "error": "The interactive page could not load.",
-    "errorCopy": "You can still download my CV or contact me by email.",
+    "error": "Something went wrong and the interactive page didn’t load.",
+    "errorCopy": "You can still download my CV or email me.",
     "retry": "Reload page",
     "universityWork": "University work",
-    "selectedProjects": "Selected projects.",
+    "selectedProjects": "A few projects I care about.",
     "cvTitle": "Curriculum vitae",
     "cvFormat": "PDF · ATS-friendly format",
     "github": "GitHub",
@@ -61,8 +61,8 @@
     "home": "Valerio Di Zio, home",
     "copyright": "© 2026",
     "preparingPdf": "Preparing PDF…",
-    "downloadError": "The CV could not be generated. Please try again.",
-    "contentError": "Content could not be refreshed. Please reload the page."
+    "downloadError": "I couldn’t generate the CV. Please try again in a moment.",
+    "contentError": "I couldn’t refresh the content. Please try reloading the page."
   },
   "person": {
     "name": "Valerio Di Zio",
@@ -75,9 +75,9 @@
     "websiteUrl": "https://v4l3rio.github.io"
   },
   "profile": [
-    "I’m Valerio, a cloud developer. I currently work on Google Cloud projects: I build backend services, mainly in Python but not exclusively, and work directly with clients to understand what they need and how best to approach it.",
-    "I graduated with honours in 2025 from the University of Bologna (Cesena campus), with an MSc in Computer Science and Engineering and a thesis on fairness in machine learning. I’m mostly interested in cloud architecture and artificial intelligence.",
-    "Outside work, I like cooking, 3D printing, video games and collecting. I try to stay active and spend time with friends."
+    "I’m Valerio, a cloud developer. I work on Google Cloud projects: I write backend services, mostly in Python, and lately I’ve been building AI agents connected to data in BigQuery. I like to start with people: understanding what clients really need first, and only then deciding how to build it.",
+    "I graduated with honours in 2025 from the University of Bologna, Cesena campus, with an MSc in Computer Science and Engineering. My thesis was about fairness in machine learning, that is, how to make a model’s results more equitable. Cloud architecture and artificial intelligence are the two topics that make me most eager to keep learning.",
+    "Away from work you’ll find me in the kitchen, at the 3D printer or with a video game in hand. Collecting is my other big weakness, and I try to keep moving and make time for friends."
   ],
   "education": {
     "date": "2022 – 2025"
@@ -88,9 +88,9 @@
       "role": "Cloud Developer / IT Consultant",
       "date": "September 2025 – present",
       "details": [
-        "I contribute to Google Cloud solution design and development, from gathering client requirements to evaluating POCs and architecture choices.",
+        "I work with clients to turn their needs into Google Cloud solutions: I gather requirements, evaluate POCs and help shape architecture choices through to development.",
         "I build Python and FastAPI services for serverless applications, data processing and cloud integrations.",
-        "I develop Google ADK agents integrated with BigQuery and contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
+        "I develop AI agents with Google ADK connected to BigQuery, and contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
       ]
     },
     {
@@ -98,7 +98,7 @@
       "role": "IT Trainer",
       "date": "2024 – 2025",
       "details": [
-        "I delivered four courses to four groups: basic Excel for school staff, LEGO Mindstorms robotics for a middle school class, and Snap programming for two primary school classes."
+        "I delivered four courses to very different groups: basic Excel for school staff, LEGO Mindstorms robotics for a middle school class, and Snap! programming for two primary school classes. It taught me to explain technology to people starting from zero."
       ]
     },
     {
@@ -106,57 +106,57 @@
       "role": "Frontend Developer",
       "date": "May – December 2023",
       "details": [
-        "I developed the Angular frontend of an Industry 4.0 data visualisation dashboard, collaborating in an Agile team with Git and CI/CD."
+        "I developed the Angular frontend of an Industry 4.0 data visualisation dashboard, working in an Agile team with Git and CI/CD."
       ]
     }
   ],
   "skills": [
     {
-      "id": "languages",
-      "label": "Languages",
-      "value": "Python, Kotlin, Scala, Java, TypeScript, JavaScript, SQL."
-    },
-    {
-      "id": "backend",
-      "label": "Backend & integrations",
-      "value": "FastAPI, Pydantic, Node.js, Express, gRPC, RabbitMQ, Socket.IO, Akka Typed."
-    },
-    {
-      "id": "frontend",
-      "label": "Frontend",
-      "value": "Angular (previous experience), Vue.js, React, HTML, CSS."
-    },
-    {
-      "id": "data",
-      "label": "Data",
-      "value": "PostgreSQL, MongoDB, NumPy, pandas, SciPy, Apache Spark / MLlib, Amazon S3."
+      "id": "cloud",
+      "label": "Google Cloud (GCP)",
+      "value": "Cloud Run, BigQuery, Vertex AI, Pub/Sub, Firestore, Cloud Storage, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging.",
+      "wide": true
     },
     {
       "id": "ai",
       "label": "AI & machine learning",
-      "value": "Google ADK, Datapizza AI, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, MidiTok; fairness and reinforcement learning.",
+      "value": "AI agents with Google ADK and Datapizza AI, Gemini Enterprise, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, fairness in machine learning.",
       "wide": true
     },
     {
-      "id": "cloud",
-      "label": "Google Cloud (GCP)",
-      "value": "Cloud Run, Cloud Storage, BigQuery, Firestore, Pub/Sub, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging.",
-      "wide": true
+      "id": "languages",
+      "label": "Languages",
+      "value": "Python, SQL, TypeScript, JavaScript, Java, Kotlin, Scala."
+    },
+    {
+      "id": "backend",
+      "label": "Backend & integrations",
+      "value": "FastAPI, Pydantic, REST APIs, gRPC, RabbitMQ, Node.js."
+    },
+    {
+      "id": "data",
+      "label": "Data",
+      "value": "PostgreSQL, MongoDB, pandas, NumPy, Apache Spark / MLlib."
     },
     {
       "id": "devops",
       "label": "DevOps & build",
-      "value": "Git, Docker, Docker Compose, GitHub Actions, Cloud Build, CI/CD, Gradle, sbt, Poetry."
+      "value": "CI/CD, Git, Docker, Docker Compose, GitHub Actions, Cloud Build, Poetry."
     },
     {
       "id": "testing",
       "label": "Testing",
-      "value": "pytest, unittest, ScalaTest, Kotest, JUnit, Cucumber (BDD), Playwright."
+      "value": "pytest, unittest, Playwright, JUnit, Cucumber (BDD)."
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "value": "Angular, Vue.js, React, HTML, CSS."
     },
     {
       "id": "architecture",
       "label": "Architecture & methods",
-      "value": "Serverless, microservices, hexagonal architecture, event-driven systems, functional programming, DSLs, Agile/Scrum.",
+      "value": "Serverless, microservices, hexagonal architecture, event-driven systems, Agile/Scrum.",
       "wide": true
     }
   ],
@@ -165,8 +165,8 @@
       "name": "FairLib",
       "tech": "Python · Machine learning fairness",
       "category": "Fairness in machine learning",
-      "description": "For my MSc thesis, I worked on a Python library applying fairness techniques in pre-processing and in-processing, integrating and improving the existing implementation.",
-      "note": "The library was used in the European AEQUITAS project. I am listed as a contributor to an AEQUITAS research dataset on Zenodo.",
+      "description": "For my MSc thesis I worked on a Python library that helps reduce bias in machine learning models, using fairness techniques in pre-processing and in-processing. My contribution was integrating and improving the existing implementation.",
+      "note": "The library was used in the European AEQUITAS project, and my name appears among the contributors of one of the project’s research datasets on Zenodo.",
       "repo": "https://github.com/pikalab-unibo-students/master-thesis-dizio-ay2324",
       "proof": "https://zenodo.org/records/11171863",
       "proofType": "dataset"
@@ -175,7 +175,7 @@
       "name": "PositionPal",
       "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
       "category": "User service",
-      "description": "I worked on the user registration and profile microservice, with hexagonal architecture, automated tests and contributions to the CI/CD pipeline. Part of a group project.",
+      "description": "In a group project, I took care of the microservice that handles user registration and profiles: hexagonal architecture, automated tests and a contribution to the CI/CD pipeline.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
       "proofType": "documentation"
@@ -184,14 +184,14 @@
       "name": "NesGen",
       "tech": "Python · TensorFlow · PyTorch · MidiTok",
       "category": "Generative music",
-      "description": "Transformer and GAN approaches for generating NES-style MIDI music, including tokenization and fine-tuning on the NES-MDB dataset.",
+      "description": "An experiment in teaching a model to compose NES-style music, the sound of old-school video games. I explored Transformer and GAN approaches on the NES-MDB dataset, with MIDI tokenization and fine-tuning.",
       "repo": "https://github.com/roostico/NesGen"
     },
     {
       "name": "Scooby",
       "tech": "Scala 3 · Akka Typed · DSL",
       "category": "Web crawler",
-      "description": "A crawler and scraper with an internal DSL for navigation, extraction and export. Akka Typed manages concurrent execution.",
+      "description": "A web crawler and scraper written in Scala 3, with an internal DSL to describe navigation, extraction and export. Concurrent execution is handled with Akka Typed.",
       "repo": "https://github.com/roostico/scooby"
     }
   ],
@@ -220,13 +220,13 @@
     {
       "title": "Certified Partner Specialist Gemini Enterprise Deployment",
       "issuer": "Google Cloud",
-      "date": "September 2026 – March 2027",
+      "date": "September 2026 (valid until March 2027)",
       "url": "https://www.credly.com/badges/c3b2ec06-2f65-411f-9cd0-0eaa7604f031/linked_in_profile"
     },
     {
       "title": "Generative AI Leader Certification",
       "issuer": "Google Cloud",
-      "date": "November 2025 – November 2028",
+      "date": "November 2025 (valid until November 2028)",
       "url": "https://www.credly.com/badges/e2c8dc34-88da-40cd-a4fd-f941b3a077f7/linked_in_profile"
     },
     {
@@ -238,7 +238,7 @@
     {
       "title": "Professional Cloud Developer",
       "issuer": "Google Cloud",
-      "date": "Target: late October 2026. Exam not yet booked.",
+      "date": "In preparation",
       "inPreparation": true
     }
   ],
@@ -255,7 +255,7 @@
   },
   "metadata": {
     "title": "Valerio Di Zio | Cloud Developer & Cloud Engineer",
-    "description": "Valerio Di Zio, Cloud Developer based in Cesena. Google Cloud, Python and FastAPI. Professional experience, public projects and downloadable CV.",
-    "socialDescription": "Google Cloud, Python and FastAPI. Experience, public projects and CV."
+    "description": "Valerio Di Zio, Cloud Developer in Cesena. Google Cloud services in Python and FastAPI, AI agents with Google ADK. Experience, projects and CV.",
+    "socialDescription": "Cloud Developer: Google Cloud, Python, AI agents. Experience, projects and CV."
   }
 }
