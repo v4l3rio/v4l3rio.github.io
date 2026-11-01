@@ -17,13 +17,13 @@
     "download": "Download CV",
     "location": "Cesena, Italy",
     "availability": "Remote, hybrid or on-site",
-    "focus": "Google Cloud · Python · AI agents",
+    "focus": "Google Cloud · Python · Go",
     "workIntro": "What I do, and where I’ve worked.",
     "current": "Current role",
     "workPrivacy": "To respect confidentiality, client work is described in general terms.",
     "skills": "Technologies & skills",
     "skillsIntro": "The tools I use at work, and the ones I’ve picked up through university and personal projects.",
-    "projectsIntro": "A selection of the most meaningful work from my university years. The code is public, so feel free to take a look.",
+    "projectsIntro": "A selection of projects from my university years. The code is public on GitHub for anyone who wants to take a closer look.",
     "thesis": "MSc thesis",
     "repository": "GitHub repository",
     "dataset": "Research dataset",
@@ -45,7 +45,7 @@
     "preparation": "In preparation",
     "target": "I’m preparing for the exam.",
     "contactTitle": "Say hello.",
-    "contactCopy": "If you have a role, a project or just something you’d like to talk about, write to me. I’m always happy to chat.",
+    "contactCopy": "If you have a role, a project or simply something you’d like to talk about, get in touch. I’m always glad to chat.",
     "italianCV": "CV in Italian",
     "englishCV": "CV in English",
     "footer": "Valerio Di Zio · Cesena, Italy",
@@ -75,9 +75,9 @@
     "websiteUrl": "https://v4l3rio.github.io"
   },
   "profile": [
-    "I’m Valerio, a cloud developer. I work on Google Cloud projects: I write backend services, mostly in Python, and lately I’ve been building AI agents connected to data in BigQuery. I like to start with people: understanding what clients really need first, and only then deciding how to build it.",
-    "I graduated with honours in 2025 from the University of Bologna, Cesena campus, with an MSc in Computer Science and Engineering. My thesis was about fairness in machine learning, that is, how to make a model’s results more equitable. Cloud architecture and artificial intelligence are the two topics that make me most eager to keep learning.",
-    "Away from work you’ll find me in the kitchen, at the 3D printer or with a video game in hand. Collecting is my other big weakness, and I try to keep moving and make time for friends."
+    "I’m Valerio, a cloud developer. I design and build solutions on Google Cloud based on the needs of the people who will use them, whatever those needs may be. I write code mainly in Python, but not exclusively: I choose the language and tools that best suit each project. I enjoy working closely with clients because, before deciding how to build something, I want to understand what is really needed.",
+    "In 2025 I earned my MSc in Computer Science and Engineering, graduating with honours from the University of Bologna (Cesena campus). My thesis was on fairness in machine learning, that is, how to make the results of models more equitable. I continue to take a particular interest in cloud architecture and artificial intelligence.",
+    "Outside work, I enjoy cooking, 3D printing, playing video games and collecting. I try to stay active and always make time for friends."
   ],
   "education": {
     "date": "2022 – 2025"
@@ -88,9 +88,9 @@
       "role": "Cloud Developer / IT Consultant",
       "date": "September 2025 – present",
       "details": [
-        "I work with clients to turn their needs into Google Cloud solutions: I gather requirements, evaluate POCs and help shape architecture choices through to development.",
-        "I build Python and FastAPI services for serverless applications, data processing and cloud integrations.",
-        "I develop AI agents with Google ADK connected to BigQuery, and contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
+        "I create Google Cloud solutions based on clients’ needs, whatever they may be: from gathering requirements to evaluating POCs and architecture choices, through to development.",
+        "I develop services for serverless applications, data processing and cloud integrations, mainly in Python and FastAPI but also in Go and other languages, depending on what each project requires.",
+        "I also contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
       ]
     },
     {
@@ -120,13 +120,13 @@
     {
       "id": "ai",
       "label": "AI & machine learning",
-      "value": "AI agents with Google ADK and Datapizza AI, Gemini Enterprise, scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers, fairness in machine learning.",
+      "value": "Google ADK, Gemini Enterprise, scikit-learn, PyTorch, TensorFlow, Transformers, fairness in machine learning.",
       "wide": true
     },
     {
       "id": "languages",
       "label": "Languages",
-      "value": "Python, SQL, TypeScript, JavaScript, Java, Kotlin, Scala."
+      "value": "Python, Kotlin, Java, Scala, Go, TypeScript, JavaScript, SQL."
     },
     {
       "id": "backend",
@@ -141,17 +141,17 @@
     {
       "id": "devops",
       "label": "DevOps & build",
-      "value": "CI/CD, Git, Docker, Docker Compose, GitHub Actions, Cloud Build, Poetry."
+      "value": "CI/CD, Git, Docker, GitHub Actions, Cloud Build, Poetry."
     },
     {
       "id": "testing",
       "label": "Testing",
-      "value": "pytest, unittest, Playwright, JUnit, Cucumber (BDD)."
+      "value": "pytest, unittest, JUnit, Cucumber (BDD)."
     },
     {
       "id": "frontend",
       "label": "Frontend",
-      "value": "Angular, Vue.js, React, HTML, CSS."
+      "value": "Angular, Vue.js, HTML, CSS."
     },
     {
       "id": "architecture",
@@ -169,7 +169,13 @@
       "note": "The library was used in the European AEQUITAS project, and my name appears among the contributors of one of the project’s research datasets on Zenodo.",
       "repo": "https://github.com/pikalab-unibo-students/master-thesis-dizio-ay2324",
       "proof": "https://zenodo.org/records/11171863",
-      "proofType": "dataset"
+      "proofType": "dataset",
+      "links": [
+        {
+          "label": "AEQUITAS project website",
+          "url": "https://www.aequitas-project.eu/"
+        }
+      ]
     },
     {
       "name": "PositionPal",
@@ -255,7 +261,7 @@
   },
   "metadata": {
     "title": "Valerio Di Zio | Cloud Developer & Cloud Engineer",
-    "description": "Valerio Di Zio, Cloud Developer in Cesena. Google Cloud services in Python and FastAPI, AI agents with Google ADK. Experience, projects and CV.",
-    "socialDescription": "Cloud Developer: Google Cloud, Python, AI agents. Experience, projects and CV."
+    "description": "Valerio Di Zio, Cloud Developer in Cesena. Google Cloud solutions, mainly in Python. Experience, public projects and a downloadable CV.",
+    "socialDescription": "Cloud Developer building Google Cloud solutions. Experience, projects and CV."
   }
 }
