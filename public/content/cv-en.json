@@ -75,9 +75,9 @@
     "websiteUrl": "https://v4l3rio.github.io"
   },
   "profile": [
-    "I’m Valerio, a cloud developer. I design and build solutions on Google Cloud based on the needs of the people who will use them, whatever those needs may be. I write code mainly in Python, but not exclusively: I choose the language and tools that best suit each project. I enjoy working closely with clients because, before deciding how to build something, I want to understand what is really needed.",
-    "In 2025 I earned my MSc in Computer Science and Engineering, graduating with honours from the University of Bologna (Cesena campus). My thesis was on fairness in machine learning, that is, how to make the results of models more equitable. I continue to take a particular interest in cloud architecture and artificial intelligence.",
-    "Outside work, I enjoy cooking, 3D printing, playing video games and collecting. I try to stay active and always make time for friends."
+    "I’m Valerio, a Cloud Developer working on Google Cloud, with an approach centred on requirements analysis and dialogue with the client. I develop mainly in Python, adopting other languages when the project requires it.",
+    "In 2025 I graduated with honours from the University of Bologna, with an MSc in Computer Science and Engineering. My thesis, dedicated to fairness in machine learning, had a concrete outcome: the library I worked on was used in the European AEQUITAS project. Cloud architecture and artificial intelligence remain the two areas I’m most curious about, and that I continue to study.",
+    "Outside work, I divide my time between cooking, video games and collecting, without forgetting physical activity and friends."
   ],
   "education": {
     "date": "2022 – 2025"
