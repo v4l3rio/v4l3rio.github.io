@@ -88,8 +88,8 @@
       "role": "Cloud Developer / IT Consultant",
       "date": "September 2025 – present",
       "details": [
-        "I create Google Cloud solutions based on clients’ needs, whatever they may be: from gathering requirements to evaluating POCs and architecture choices, through to development.",
-        "I develop services for serverless applications, data processing and cloud integrations, mainly in Python and FastAPI but also in Go and other languages, depending on what each project requires.",
+        "I design and develop solutions on Google Cloud for clients, from gathering requirements to evaluating POCs and architecture choices.",
+        "I develop services for serverless applications, data processing and cloud integrations, with Python and FastAPI as my main tools.",
         "I also contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
       ]
     },
