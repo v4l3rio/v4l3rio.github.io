@@ -24,20 +24,20 @@ const olive = "#A8BC75";
 const rule = "#d3d8c6";
 
 const s = StyleSheet.create({
-  page: { paddingTop: 32, paddingBottom: 36, paddingHorizontal: 50, fontFamily: "CV", fontSize: 10, lineHeight: "13.6pt", color: ink },
-  header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 7, marginBottom: 0 },
+  page: { paddingTop: 38, paddingBottom: 40, paddingHorizontal: 50, fontFamily: "CV", fontSize: 10, lineHeight: "13.6pt", color: ink },
+  header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 9, marginBottom: 0 },
   name: { fontFamily: "Display", fontWeight: 700, fontSize: 30, lineHeight: "34pt", letterSpacing: -.4 },
   dot: { color: olive },
   role: { fontSize: 12.5, color: accent, fontWeight: 700, marginTop: 2, marginBottom: 6 },
   contact: { fontSize: 9.3, lineHeight: "13pt", color: soft },
-  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 5, marginTop: 9 },
-  paragraph: { marginBottom: 3 },
+  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 7, marginTop: 13 },
+  paragraph: { marginBottom: 4 },
   row: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end" },
   heading: { fontSize: 11, fontWeight: 700, lineHeight: "14pt", flex: 1, paddingRight: 12 },
   date: { fontSize: 9.3, lineHeight: "14pt", color: soft },
   meta: { fontSize: 9.3, lineHeight: "12.5pt", color: soft, marginTop: 1, marginBottom: 3 },
   company: { fontWeight: 700, color: accent },
-  job: { marginBottom: 6 },
+  job: { marginBottom: 11 },
   bullet: { flexDirection: "row", marginBottom: 2 },
   marker: { width: 11, color: accent },
   bulletText: { flex: 1 },
@@ -47,16 +47,27 @@ const s = StyleSheet.create({
   skillRow: { flexDirection: "row", marginBottom: 3.5 },
   skillLabel: { width: 132, fontWeight: 700, paddingRight: 10 },
   skillValue: { flex: 1 },
-  project: { marginBottom: 8 },
+  project: { marginBottom: 11 },
   projectTitle: { fontSize: 11, fontWeight: 700, lineHeight: "14pt" },
   category: { fontWeight: 400, color: soft },
   projectLinks: { fontSize: 9.3, marginTop: 2 },
   link: { color: accent, textDecoration: "underline" },
   sep: { color: olive },
+  team: { fontSize: 9.3, lineHeight: "12.5pt", color: soft },
+  process: { marginTop: 5, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 2 },
+  processItem: { fontSize: 9.6, lineHeight: "13pt" },
 });
 
 const clean = (text: string) => text.replace(/[\u2011\u2013\u2014]/g, "-");
 const display = (url: string) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
+/** The "how I worked" layer: team dynamics, method and decisions behind a result. */
+function Process({ items }: { items?: string[] }) {
+  if (!items?.length) return null;
+  return <View style={s.process}>
+    {items.map((item, index) => <View key={index} style={s.bullet}><Text style={[s.processItem, s.marker]}>–</Text><Text style={[s.processItem, s.bulletText]}>{item}</Text></View>)}
+  </View>;
+}
 
 function Heading({ children }: { children: string }) {
   return <Text style={s.title} minPresenceAhead={40}>{children}</Text>;
@@ -83,10 +94,11 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       {data.profile.map((paragraph, index) => <Text key={index} style={s.paragraph}>{paragraph}</Text>)}
 
       {data.experience.length > 0 && <Heading>{config.experienceHeading}</Heading>}
-      {data.experience.map((job, index) => <View key={index} style={s.job}>
+      {data.experience.map((job, index) => <View key={index} style={s.job} wrap={false}>
         <View style={s.row} minPresenceAhead={35}><Text style={s.heading}>{job.role}</Text><Text style={s.date}>{clean(job.date)}</Text></View>
-        <Text style={s.meta}><Text style={s.company}>{job.company}</Text></Text>
+        <Text style={s.meta}><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
         {job.details.length === 1 ? <Text>{job.details[0]}</Text> : job.details.map((detail, index) => <View key={index} style={s.bullet}><Text style={s.marker}>•</Text><Text style={s.bulletText}>{detail}</Text></View>)}
+        <Process items={job.process} />
       </View>)}
 
       <View wrap={false}>
@@ -115,13 +127,15 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       </View>)}
 
       {data.projects.length > 0 && <Heading>{config.projectsHeading}</Heading>}
-      {data.projects.map((project, index) => <View key={index} style={s.project}>
+      {data.projects.filter(project => !project.hideInPdf).map((project, index) => <View key={index} style={s.project} wrap={false}>
         <Text style={s.projectTitle} minPresenceAhead={40}>{project.name}<Text style={s.category}>  ·  {project.category}</Text></Text>
-        <Text style={s.meta}>{project.tech}</Text>
+        {project.team && <Text style={s.meta}>{project.team}</Text>}
         <Text>{project.description}{project.note ? ` ${project.note}` : ""}</Text>
+        <Process items={project.process} />
         <Text style={s.projectLinks}><Dots items={[
           <Link src={project.repo} style={s.link}>{t.repository}</Link>,
           project.proof ? <Link src={project.proof} style={s.link}>{project.proofType === "dataset" ? t.dataset : t.documentation}</Link> : null,
+          <Text style={s.team}>{project.tech}</Text>,
         ]} /></Text>
       </View>)}
 

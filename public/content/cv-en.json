@@ -62,7 +62,8 @@
     "copyright": "© 2026",
     "preparingPdf": "Preparing PDF…",
     "downloadError": "I couldn’t generate the CV. Please try again in a moment.",
-    "contentError": "I couldn’t refresh the content. Please try reloading the page."
+    "contentError": "I couldn’t refresh the content. Please try reloading the page.",
+    "howIWorked": "How I worked"
   },
   "person": {
     "name": "Valerio Di Zio",
@@ -91,6 +92,11 @@
         "I design and develop solutions on Google Cloud for clients, from gathering requirements to evaluating POCs and architecture choices.",
         "I develop services for serverless applications, data processing and cloud integrations, with Python and FastAPI as my main tools.",
         "I also contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
+      ],
+      "team": "Team of 5: developers, architects and a PM",
+      "process": [
+        "I work directly with clients across requirements gathering, workshops, demos and feedback cycles, and take part in technical decisions.",
+        "We work in an agile way, often with Scrum: tasks live in an internal tool and every change is reviewed by the team through a pull request."
       ]
     },
     {
@@ -99,6 +105,10 @@
       "date": "2024 – 2025",
       "details": [
         "I delivered four courses to very different groups: basic Excel for school staff, LEGO Mindstorms robotics for a middle school class, and Snap! programming for two primary school classes. It taught me to explain technology to people starting from zero."
+      ],
+      "team": "Course design and teaching on my own",
+      "process": [
+        "Each course started from two questions: who it was for and what it needed to achieve. I built the lessons around the answers."
       ]
     },
     {
@@ -107,6 +117,11 @@
       "date": "May – December 2023",
       "details": [
         "I developed the Angular frontend of an Industry 4.0 data visualisation dashboard, working in an Agile team with Git and CI/CD."
+      ],
+      "team": "Team of 3",
+      "process": [
+        "We worked in weekly sprints, with tasks tracked in a shared tool.",
+        "I stayed in constant sync with the backend and the PM through meetings and the company chat."
       ]
     }
   ],
@@ -175,6 +190,12 @@
           "label": "AEQUITAS project website",
           "url": "https://www.aequitas-project.eu/"
         }
+      ],
+      "team": "Individual project, supervised by my thesis advisor",
+      "process": [
+        "I worked towards goals with my advisor: we set them together, reviewed them at the next meeting and planned the next steps from there.",
+        "I made most of the architectural decisions: which algorithms to prioritise and how to keep the library easy to use for most people.",
+        "I made the algorithms more robust and compatible with both TensorFlow and PyTorch, designed a new one and finally measured the results."
       ]
     },
     {
@@ -184,21 +205,33 @@
       "description": "In a group project, I took care of the microservice that handles user registration and profiles: hexagonal architecture, automated tests and a contribution to the CI/CD pipeline.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
-      "proofType": "documentation"
+      "proofType": "documentation",
+      "team": "Team of 3 · I owned the user service",
+      "process": [
+        "We worked in Scrum, with the microservices split across the team.",
+        "I integrated my service with the others through the adapters of the hexagonal architecture, backed by integration tests."
+      ]
     },
     {
       "name": "NesGen",
       "tech": "Python · TensorFlow · PyTorch · MidiTok",
       "category": "Generative music",
       "description": "An experiment in teaching a model to compose NES-style music, the sound of old-school video games. I explored Transformer and GAN approaches on the NES-MDB dataset, with MIDI tokenization and fine-tuning.",
-      "repo": "https://github.com/roostico/NesGen"
+      "repo": "https://github.com/roostico/NesGen",
+      "team": "Team of 3",
+      "process": [
+        "In the first phase each of us explored a different direction on our own: four approaches in total.",
+        "We then joined forces on the two most promising ones."
+      ],
+      "hideInPdf": true
     },
     {
       "name": "Scooby",
       "tech": "Scala 3 · Akka Typed · DSL",
       "category": "Web crawler",
       "description": "A web crawler and scraper written in Scala 3, with an internal DSL to describe navigation, extraction and export. Concurrent execution is handled with Akka Typed.",
-      "repo": "https://github.com/roostico/scooby"
+      "repo": "https://github.com/roostico/scooby",
+      "team": "Team of 4 · I built the crawler"
     }
   ],
   "archive": [
