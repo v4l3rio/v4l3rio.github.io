@@ -180,7 +180,7 @@
       "name": "FairLib",
       "tech": "Python · Machine learning fairness",
       "category": "Fairness nel machine learning",
-      "description": "Per la tesi magistrale ho lavorato su una libreria Python che aiuta a ridurre i pregiudizi nei modelli di machine learning, con tecniche di fairness in pre-processing e in-processing. Il mio contributo è stato integrare e migliorare l’implementazione esistente.",
+      "description": "Per la tesi magistrale ho fatto evolvere FairLib, una libreria Python che aiuta a ridurre i pregiudizi nei modelli di machine learning con tecniche di fairness in pre-processing e in-processing. Sono partito da un’implementazione esistente e l’ho resa più completa e più facile da adottare.",
       "note": "La libreria è stata usata nel progetto europeo AEQUITAS, e il mio nome compare tra i contributori di un dataset di ricerca del progetto su Zenodo.",
       "repo": "https://github.com/pikalab-unibo-students/master-thesis-dizio-ay2324",
       "proof": "https://zenodo.org/records/11171863",
