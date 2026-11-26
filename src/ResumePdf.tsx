@@ -24,7 +24,7 @@ const olive = "#A8BC75";
 const rule = "#d3d8c6";
 
 const s = StyleSheet.create({
-  page: { paddingTop: 38, paddingBottom: 40, paddingHorizontal: 50, fontFamily: "CV", fontSize: 10, lineHeight: "13.6pt", color: ink },
+  page: { paddingTop: 36, paddingBottom: 36, paddingHorizontal: 48, fontFamily: "CV", fontSize: 9.7, lineHeight: "13.2pt", color: ink },
   header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 9, marginBottom: 0 },
   nameRow: { flexDirection: "row", alignItems: "flex-end" },
   name: { fontFamily: "Display", fontWeight: 700, fontSize: 30, lineHeight: "34pt", letterSpacing: -.4 },
@@ -32,14 +32,14 @@ const s = StyleSheet.create({
   dot: { width: 6.5, height: 6.5, borderRadius: 3.25, backgroundColor: olive, marginLeft: 2, marginBottom: 6 },
   role: { fontSize: 12.5, color: accent, fontWeight: 700, marginTop: 2, marginBottom: 6 },
   contact: { fontSize: 9.3, lineHeight: "13pt", color: soft },
-  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 7, marginTop: 13 },
+  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 6, marginTop: 11 },
   paragraph: { marginBottom: 4 },
   row: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end" },
   heading: { fontSize: 11, fontWeight: 700, lineHeight: "14pt", flex: 1, paddingRight: 12 },
   date: { fontSize: 9.3, lineHeight: "14pt", color: soft },
   meta: { fontSize: 9.3, lineHeight: "12.5pt", color: soft, marginTop: 1, marginBottom: 3 },
   company: { fontWeight: 700, color: accent },
-  job: { marginBottom: 11 },
+  job: { marginBottom: 9 },
   bullet: { flexDirection: "row", marginBottom: 2 },
   marker: { width: 11, color: accent },
   bulletText: { flex: 1 },
@@ -49,24 +49,28 @@ const s = StyleSheet.create({
   skillRow: { flexDirection: "row", marginBottom: 3.5 },
   skillLabel: { width: 132, fontWeight: 700, paddingRight: 10 },
   skillValue: { flex: 1 },
-  project: { marginBottom: 11 },
+  project: { marginBottom: 9 },
   projectTitle: { fontSize: 11, fontWeight: 700, lineHeight: "14pt" },
   category: { fontWeight: 400, color: soft },
   projectLinks: { fontSize: 9.3, marginTop: 2 },
   link: { color: accent, textDecoration: "underline" },
   sep: { color: olive },
   team: { fontSize: 9.3, lineHeight: "12.5pt", color: soft },
-  callout: { marginTop: 5, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 2 },
-  calloutText: { fontSize: 9.6, lineHeight: "13pt" },
+  callout: { marginTop: 4, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 1.5 },
+  calloutText: { fontSize: 9.3, lineHeight: "12.6pt" },
 });
 
 const clean = (text: string) => text.replace(/[\u2011\u2013\u2014]/g, "-");
 const display = (url: string) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
 
-/** Sets a project's verifiable result apart with the olive rule used on the website. */
-function Callout({ children }: { children?: string }) {
-  if (!children) return null;
-  return <View style={s.callout}><Text style={s.calloutText}>{children}</Text></View>;
+/** The olive-ruled callout used on the website: how the work was done and what it led to. */
+function Callout({ items }: { items?: string[] }) {
+  if (!items?.length) return null;
+  return <View style={s.callout}>
+    {items.length === 1
+      ? <Text style={s.calloutText}>{items[0]}</Text>
+      : items.map((item, index) => <View key={index} style={s.bullet}><Text style={[s.calloutText, s.marker]}>–</Text><Text style={[s.calloutText, s.bulletText]}>{item}</Text></View>)}
+  </View>;
 }
 
 function Heading({ children }: { children: string }) {
@@ -98,6 +102,7 @@ export function ResumePdf({ data }: { data: ResumeData }) {
         <View style={s.row} minPresenceAhead={35}><Text style={s.heading}>{job.role}</Text><Text style={s.date}>{clean(job.date)}</Text></View>
         <Text style={s.meta}><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
         {job.details.length === 1 ? <Text>{job.details[0]}</Text> : job.details.map((detail, index) => <View key={index} style={s.bullet}><Text style={s.marker}>•</Text><Text style={s.bulletText}>{detail}</Text></View>)}
+        <Callout items={job.process} />
       </View>)}
 
       {data.skills.length > 0 && <Heading>{config.skillsHeading}</Heading>}
@@ -109,8 +114,8 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       {data.projects.filter(project => !project.hideInPdf).map((project, index) => <View key={index} style={s.project} wrap={false}>
         <Text style={s.projectTitle} minPresenceAhead={40}>{project.name}<Text style={s.category}>  ·  {project.category}</Text></Text>
         {project.team && <Text style={s.meta}>{project.team}</Text>}
-        <Text>{project.description}</Text>
-        <Callout>{project.note}</Callout>
+        <Text>{project.description}{project.note ? ` ${project.note}` : ""}</Text>
+        <Callout items={project.process} />
         <Text style={s.projectLinks}><Dots items={[
           <Link src={project.repo} style={s.link}>{t.repository}</Link>,
           project.proof ? <Link src={project.proof} style={s.link}>{project.proofType === "dataset" ? t.dataset : t.documentation}</Link> : null,

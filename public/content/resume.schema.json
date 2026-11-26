@@ -197,6 +197,9 @@
         },
         "contentError": {
           "type": "string"
+        },
+        "howIWorked": {
+          "type": "string"
         }
       },
       "required": [
@@ -260,7 +263,8 @@
         "copyright",
         "preparingPdf",
         "downloadError",
-        "contentError"
+        "contentError",
+        "howIWorked"
       ],
       "additionalProperties": false
     },
@@ -371,6 +375,12 @@
           },
           "team": {
             "type": "string"
+          },
+          "process": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "required": [
@@ -432,6 +442,12 @@
           },
           "team": {
             "type": "string"
+          },
+          "process": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "hideInPdf": {
             "type": "boolean"
