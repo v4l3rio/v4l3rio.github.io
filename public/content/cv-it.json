@@ -62,8 +62,7 @@
     "copyright": "© 2026",
     "preparingPdf": "Preparazione PDF…",
     "downloadError": "Non sono riuscito a generare il CV. Riprova tra un attimo.",
-    "contentError": "Non sono riuscito ad aggiornare i contenuti. Prova a ricaricare la pagina.",
-    "howIWorked": "Come ho lavorato"
+    "contentError": "Non sono riuscito ad aggiornare i contenuti. Prova a ricaricare la pagina."
   },
   "person": {
     "name": "Valerio Di Zio",

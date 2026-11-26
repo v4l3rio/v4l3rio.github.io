@@ -56,19 +56,17 @@ const s = StyleSheet.create({
   link: { color: accent, textDecoration: "underline" },
   sep: { color: olive },
   team: { fontSize: 9.3, lineHeight: "12.5pt", color: soft },
-  process: { marginTop: 5, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 2 },
-  processItem: { fontSize: 9.6, lineHeight: "13pt" },
+  callout: { marginTop: 5, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 2 },
+  calloutText: { fontSize: 9.6, lineHeight: "13pt" },
 });
 
 const clean = (text: string) => text.replace(/[\u2011\u2013\u2014]/g, "-");
 const display = (url: string) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
 
-/** The "how I worked" layer: team dynamics, method and decisions behind a result. */
-function Process({ items }: { items?: string[] }) {
-  if (!items?.length) return null;
-  return <View style={s.process}>
-    {items.map((item, index) => <View key={index} style={s.bullet}><Text style={[s.processItem, s.marker]}>–</Text><Text style={[s.processItem, s.bulletText]}>{item}</Text></View>)}
-  </View>;
+/** Sets a project's verifiable result apart with the olive rule used on the website. */
+function Callout({ children }: { children?: string }) {
+  if (!children) return null;
+  return <View style={s.callout}><Text style={s.calloutText}>{children}</Text></View>;
 }
 
 function Heading({ children }: { children: string }) {
@@ -100,7 +98,6 @@ export function ResumePdf({ data }: { data: ResumeData }) {
         <View style={s.row} minPresenceAhead={35}><Text style={s.heading}>{job.role}</Text><Text style={s.date}>{clean(job.date)}</Text></View>
         <Text style={s.meta}><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
         {job.details.length === 1 ? <Text>{job.details[0]}</Text> : job.details.map((detail, index) => <View key={index} style={s.bullet}><Text style={s.marker}>•</Text><Text style={s.bulletText}>{detail}</Text></View>)}
-        <Process items={job.process} />
       </View>)}
 
       {data.skills.length > 0 && <Heading>{config.skillsHeading}</Heading>}
@@ -112,8 +109,8 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       {data.projects.filter(project => !project.hideInPdf).map((project, index) => <View key={index} style={s.project} wrap={false}>
         <Text style={s.projectTitle} minPresenceAhead={40}>{project.name}<Text style={s.category}>  ·  {project.category}</Text></Text>
         {project.team && <Text style={s.meta}>{project.team}</Text>}
-        <Text>{project.description}{project.note ? ` ${project.note}` : ""}</Text>
-        <Process items={project.process} />
+        <Text>{project.description}</Text>
+        <Callout>{project.note}</Callout>
         <Text style={s.projectLinks}><Dots items={[
           <Link src={project.repo} style={s.link}>{t.repository}</Link>,
           project.proof ? <Link src={project.proof} style={s.link}>{project.proofType === "dataset" ? t.dataset : t.documentation}</Link> : null,

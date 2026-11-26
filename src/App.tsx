@@ -11,10 +11,9 @@ function ExternalLink({ href, children, className = "text-link" }: { href: strin
   return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}<Icon name="arrow-up-right" aria-hidden="true" feedback={false} /></a>;
 }
 
-/** The "how I worked" layer: team dynamics, method and decisions behind a result. */
-function Process({ label, items }: { label: string; items?: string[] }) {
-  if (!items?.length) return null;
-  return <ul className="process" role="list" aria-label={label}>{items.map(item => <li key={item}>{item}</li>)}</ul>;
+/** Sets a project's verifiable result apart with the olive rule, as the PDF does. */
+function Callout({ children }: { children?: string }) {
+  return children ? <p className="callout">{children}</p> : null;
 }
 
 export function App({ language = "en" }: { language?: Language }) {
@@ -111,7 +110,6 @@ export function App({ language = "en" }: { language?: Language }) {
             <p className="job-role">{job.role}</p>
             {job.team && <p className="metadata job-team">{job.team}</p>}
             {job.details.length > 1 ? <ul>{job.details.map(detail => <li key={detail}>{detail}</li>)}</ul> : <p>{job.details[0]}</p>}
-            <Process label={t.howIWorked} items={job.process} />
           </article>)}
           <p className="confidentiality metadata">{t.workPrivacy}</p>
         </div>
@@ -128,11 +126,11 @@ export function App({ language = "en" }: { language?: Language }) {
           <div className="projects-heading"><div><p className="eyebrow">{t.universityWork}</p><h2 id="projects-title">{t.selectedProjects}</h2></div><p>{t.projectsIntro}</p></div>
           {projects.length > 0 && <article className="thesis-project">
             <div className="thesis-title"><p className="eyebrow">{t.thesis}</p><h3>{projects[0].name}</h3><p>{projects[0].category}</p>{projects[0].team && <p className="metadata project-team">{projects[0].team}</p>}<p className="metadata">{projects[0].tech}</p></div>
-            <div className="thesis-detail"><p>{projects[0].description}</p><p>{projects[0].note}</p><Process label={t.howIWorked} items={projects[0].process} /><div className="link-group"><ExternalLink href={projects[0].repo}>{t.repository}</ExternalLink>{projects[0].proof && <ExternalLink href={projects[0].proof}>{projects[0].proofType === "dataset" ? t.dataset : t.documentation}</ExternalLink>}</div></div>
+            <div className="thesis-detail"><p>{projects[0].description}</p><Callout>{projects[0].note}</Callout><div className="link-group"><ExternalLink href={projects[0].repo}>{t.repository}</ExternalLink>{projects[0].proof && <ExternalLink href={projects[0].proof}>{projects[0].proofType === "dataset" ? t.dataset : t.documentation}</ExternalLink>}</div></div>
           </article>}
           <div className="project-list">{projects.slice(1).map(project => <article className="project-row" key={project.name}>
             <div><h3>{project.name}</h3><p className="project-category">{project.category}</p>{project.team && <p className="metadata project-team">{project.team}</p>}</div>
-            <div><p>{project.description}</p><Process label={t.howIWorked} items={project.process} /><p className="metadata project-tech">{project.tech}</p></div>
+            <div><p>{project.description}</p><Callout>{project.note}</Callout><p className="metadata project-tech">{project.tech}</p></div>
             <div className="project-links"><ExternalLink href={project.repo}>{t.github}</ExternalLink>{project.proof && <ExternalLink href={project.proof}>{t.documentation}</ExternalLink>}</div>
           </article>)}</div>
           <Accordion data-motion="off" type="single" collapsible appearance="editorial" className="project-archive">

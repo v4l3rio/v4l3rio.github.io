@@ -62,8 +62,7 @@
     "copyright": "© 2026",
     "preparingPdf": "Preparing PDF…",
     "downloadError": "I couldn’t generate the CV. Please try again in a moment.",
-    "contentError": "I couldn’t refresh the content. Please try reloading the page.",
-    "howIWorked": "How I worked"
+    "contentError": "I couldn’t refresh the content. Please try reloading the page."
   },
   "person": {
     "name": "Valerio Di Zio",

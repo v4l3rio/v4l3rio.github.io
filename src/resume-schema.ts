@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-const textKeys = ["skip", "navLabel", "menu", "close", "work", "projects", "about", "contact", "otherLanguage", "themeLight", "themeDark", "viewWork", "download", "location", "availability", "focus", "workIntro", "current", "workPrivacy", "skills", "skillsIntro", "projectsIntro", "thesis", "repository", "dataset", "documentation", "archive", "archiveIntro", "education", "degree", "university", "grade", "languages", "languageDetail", "interests", "interestsDetail", "qualifications", "credentials", "credential", "completion", "preparation", "target", "contactTitle", "contactCopy", "italianCV", "englishCV", "footer", "error", "errorCopy", "retry", "universityWork", "selectedProjects", "cvTitle", "cvFormat", "github", "linkedin", "home", "copyright", "preparingPdf", "downloadError", "contentError", "howIWorked"] as const;
+const textKeys = ["skip", "navLabel", "menu", "close", "work", "projects", "about", "contact", "otherLanguage", "themeLight", "themeDark", "viewWork", "download", "location", "availability", "focus", "workIntro", "current", "workPrivacy", "skills", "skillsIntro", "projectsIntro", "thesis", "repository", "dataset", "documentation", "archive", "archiveIntro", "education", "degree", "university", "grade", "languages", "languageDetail", "interests", "interestsDetail", "qualifications", "credentials", "credential", "completion", "preparation", "target", "contactTitle", "contactCopy", "italianCV", "englishCV", "footer", "error", "errorCopy", "retry", "universityWork", "selectedProjects", "cvTitle", "cvFormat", "github", "linkedin", "home", "copyright", "preparingPdf", "downloadError", "contentError"] as const;
 const textShape = Object.fromEntries(textKeys.map(key => [key, z.string()])) as Record<typeof textKeys[number], z.ZodString>;
 const url = z.url().refine(value => /^https?:\/\//.test(value), "Use an http or https URL");
-const project = z.object({ name: z.string().min(1), tech: z.string(), category: z.string(), description: z.string(), note: z.string().optional(), team: z.string().optional(), process: z.array(z.string()).optional(), hideInPdf: z.boolean().optional(), repo: url, proof: url.optional(), proofType: z.string().optional() });
+const project = z.object({ name: z.string().min(1), tech: z.string(), category: z.string(), description: z.string(), note: z.string().optional(), team: z.string().optional(), hideInPdf: z.boolean().optional(), repo: url, proof: url.optional(), proofType: z.string().optional() });
 export const resumeSchema = z.object({
   $schema: z.string().optional(),
   language: z.enum(["en", "it"]),
@@ -12,7 +12,7 @@ export const resumeSchema = z.object({
   person: z.object({ name: z.string().min(1), role: z.string(), phone: z.string(), email: z.email(), githubLabel: z.string(), githubUrl: url, linkedinUrl: url, websiteUrl: url }),
   profile: z.array(z.string()),
   education: z.object({ date: z.string() }),
-  experience: z.array(z.object({ company: z.string().min(1), role: z.string(), date: z.string(), details: z.array(z.string()), team: z.string().optional(), process: z.array(z.string()).optional() })),
+  experience: z.array(z.object({ company: z.string().min(1), role: z.string(), date: z.string(), details: z.array(z.string()), team: z.string().optional() })),
   skills: z.array(z.object({ id: z.string().min(1), label: z.string(), value: z.string(), wide: z.boolean().optional() })),
   projects: z.array(project),
   archive: z.array(z.object({ name: z.string(), year: z.string(), url: url.optional() })),

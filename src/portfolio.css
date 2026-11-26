@@ -62,8 +62,7 @@ p, li, dd { overflow-wrap: break-word; }
 .confidentiality { margin-top: 28px; }
 .job-team { margin: -10px 0 18px; }
 .project-team { margin-top: 10px; }
-.process { margin-top: 22px; padding: 2px 0 2px 18px; border-left: 2px solid var(--v-olive); list-style: none; display: grid; gap: 10px; color: var(--v-text-2); }
-.job ul.process { padding-left: 18px; gap: 10px; }
+.callout { margin-top: 22px; padding: 2px 0 2px 18px; border-left: 2px solid var(--v-olive); color: var(--v-text-2); }
 .toolkit { grid-column: 1 / -1; border-top: 1px solid var(--v-border); padding-top: 40px; display: grid; grid-template-columns: .78fr 1.65fr; gap: 84px; }
 .toolkit h3 { font-size: 24px; }
 .toolkit-heading .metadata { margin-top: 12px; max-width: 30ch; }
