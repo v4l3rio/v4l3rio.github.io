@@ -17,7 +17,7 @@
     "download": "Download CV",
     "location": "Cesena, Italy",
     "availability": "Remote, hybrid or on-site",
-    "focus": "Google Cloud · Python · Go",
+    "focus": "Python · FastAPI · Google Cloud",
     "workIntro": "What I do, and where I’ve worked.",
     "current": "Current role",
     "workPrivacy": "To respect confidentiality, client work is described in general terms.",
@@ -35,9 +35,9 @@
     "university": "University of Bologna, Cesena",
     "grade": "Final grade: 110/110 cum laude (highest distinction)",
     "languages": "Languages",
-    "languageDetail": "Italian is my native language. English is B2, assessed through a university exam.",
-    "interests": "Away from the keyboard",
-    "interestsDetail": "I cook, 3D print, play video games, collect things and go to the gym.",
+    "languageDetail": "Italian: native. English: B2 (University of Bologna exam).",
+    "interests": "Interests",
+    "interestsDetail": "Sim racing on my own driving simulator and Formula 1, 3D printing, cooking and the gym.",
     "qualifications": "A little more about me.",
     "credentials": "Certifications & learning",
     "credential": "View credential",
@@ -67,7 +67,7 @@
   },
   "person": {
     "name": "Valerio Di Zio",
-    "role": "Cloud Developer / Cloud Engineer",
+    "role": "Software Developer · Python, Cloud & Data Integration",
     "phone": "+39 351 900 6333",
     "email": "diziovalerio@gmail.com",
     "githubLabel": "GitHub / v4l3rio",
@@ -76,9 +76,9 @@
     "websiteUrl": "https://v4l3rio.github.io"
   },
   "profile": [
-    "I’m Valerio, a Cloud Developer working on Google Cloud, with an approach centred on requirements analysis and dialogue with the client. I develop mainly in Python, adopting other languages when the project requires it.",
-    "In 2025 I graduated with honours from the University of Bologna, with an MSc in Computer Science and Engineering. My thesis, dedicated to fairness in machine learning, had a concrete outcome: the library I worked on was used in the European AEQUITAS project. Cloud architecture and artificial intelligence remain the two areas I’m most curious about, and that I continue to study.",
-    "Outside work, I divide my time between cooking, video games and collecting, without forgetting physical activity and friends."
+    "Software developer with over a year at Go Reply building Python/FastAPI services and cloud integrations on Google Cloud, and earlier the Angular frontend of an Industry 4.0 data dashboard. I work directly with the people who use what I build, from requirements and demos to troubleshooting and support.",
+    "MSc in Computer Science and Engineering, 110/110 cum laude, University of Bologna (2025). For my thesis I built most of FairLib, an open-source fairness library published on PyPI and used in the EU AEQUITAS project.",
+    "Based in Cesena and available on-site. English B2."
   ],
   "education": {
     "date": "2022 – 2025"
@@ -89,79 +89,48 @@
       "role": "Cloud Developer / IT Consultant",
       "date": "September 2025 – present",
       "details": [
-        "I design and develop solutions on Google Cloud for clients, from gathering requirements to evaluating POCs and architecture choices.",
-        "I develop services for serverless applications, data processing and cloud integrations, with Python and FastAPI as my main tools.",
-        "I also contribute to CI/CD, IAM, monitoring, logging, troubleshooting and technical support."
+        "Design and build Google Cloud solutions for clients, from requirements and proofs of concept to architecture choices.",
+        "Develop Python/FastAPI services for serverless applications, data processing and cloud integrations.",
+        "Work directly with client stakeholders in requirements gathering, workshops, demos and feedback cycles, and take part in technical decisions.",
+        "Contribute to CI/CD, IAM, monitoring and logging; handle troubleshooting and technical support."
       ],
-      "team": "Team of 5: developers, architects and a PM",
-      "process": [
-        "I work directly with clients across requirements gathering, workshops, demos and feedback cycles, and take part in technical decisions.",
-        "We work in an agile way, often with Scrum: tasks live in an internal tool and every change is reviewed by the team through a pull request."
-      ]
+      "team": "Team of 5: developers, architects and a PM"
     },
     {
       "company": "SER.IN.AR",
       "role": "IT Trainer",
       "date": "2024 – 2025",
       "details": [
-        "I delivered four courses to very different groups: basic Excel for school staff, LEGO Mindstorms robotics for a middle school class, and Snap! programming for two primary school classes. It taught me to explain technology to people starting from zero."
+        "Designed and taught four introductory courses for learners with no technical background: Excel for school staff, LEGO Mindstorms robotics for a middle school class and Snap! programming for two primary school classes."
       ],
-      "team": "Course design and teaching on my own",
-      "process": [
-        "Each course started from two questions: who it was for and what it needed to achieve. I built the lessons around the answers."
-      ]
+      "team": "Course design and teaching on my own"
     },
     {
       "company": "Visup",
       "role": "Frontend Developer",
       "date": "May – December 2023",
       "details": [
-        "I developed the Angular frontend of an Industry 4.0 data visualisation dashboard, working in an Agile team with Git and CI/CD."
+        "Built the Angular (TypeScript) frontend of an Industry 4.0 data visualisation dashboard.",
+        "Worked in weekly sprints alongside the backend developer and the PM to integrate the dashboard with the backend APIs, using Git and CI/CD."
       ],
-      "team": "Team of 3",
-      "process": [
-        "We worked in weekly sprints, with tasks tracked in a shared tool.",
-        "I stayed in constant sync with the backend and the PM through meetings and the company chat."
-      ]
+      "team": "Part-time · Team of 3"
     }
   ],
   "skills": [
     {
-      "id": "cloud",
-      "label": "Google Cloud (GCP)",
-      "value": "Cloud Run, BigQuery, Vertex AI, Pub/Sub, Firestore, Cloud Storage, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging.",
-      "wide": true
-    },
-    {
-      "id": "ai",
-      "label": "AI & machine learning",
-      "value": "Google ADK, Gemini Enterprise, scikit-learn, PyTorch, TensorFlow, Transformers, fairness in machine learning.",
-      "wide": true
-    },
-    {
       "id": "languages",
-      "label": "Languages",
-      "value": "Python, Kotlin, Java, Scala, Go, TypeScript, JavaScript, SQL."
+      "label": "Programming",
+      "value": "Python (primary), TypeScript, JavaScript, SQL, Kotlin, Scala, Java."
     },
     {
       "id": "backend",
-      "label": "Backend & integrations",
-      "value": "FastAPI, Pydantic, REST APIs, gRPC, RabbitMQ, Node.js."
+      "label": "Backend & integration",
+      "value": "FastAPI, Pydantic, REST APIs, gRPC, Pub/Sub, RabbitMQ; microservices, event-driven and hexagonal architecture."
     },
     {
       "id": "data",
       "label": "Data",
-      "value": "PostgreSQL, MongoDB, pandas, NumPy, Apache Spark / MLlib."
-    },
-    {
-      "id": "devops",
-      "label": "DevOps & build",
-      "value": "CI/CD, Git, Docker, GitHub Actions, Cloud Build, Poetry."
-    },
-    {
-      "id": "testing",
-      "label": "Testing",
-      "value": "pytest, unittest, JUnit, Cucumber (BDD)."
+      "value": "PostgreSQL, BigQuery, MongoDB, pandas, Apache Spark."
     },
     {
       "id": "frontend",
@@ -169,19 +138,35 @@
       "value": "Angular, Vue.js, HTML, CSS."
     },
     {
-      "id": "architecture",
-      "label": "Architecture & methods",
-      "value": "Serverless, microservices, hexagonal architecture, event-driven systems, Agile/Scrum.",
+      "id": "cloud",
+      "label": "Google Cloud",
+      "value": "Cloud Run, Pub/Sub, BigQuery, Firestore, Cloud Storage, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging, Vertex AI.",
+      "wide": true
+    },
+    {
+      "id": "devops",
+      "label": "DevOps",
+      "value": "Git, GitHub, GitHub Actions, Cloud Build, Docker, CI/CD, Poetry."
+    },
+    {
+      "id": "testing",
+      "label": "Testing",
+      "value": "pytest, JUnit, Cucumber (BDD), integration testing."
+    },
+    {
+      "id": "ai",
+      "label": "AI & machine learning",
+      "value": "PyTorch, TensorFlow, scikit-learn, Transformers, Google ADK, Gemini Enterprise.",
       "wide": true
     }
   ],
   "projects": [
     {
       "name": "FairLib",
-      "tech": "Python · Machine learning fairness",
+      "tech": "Python · PyTorch · scikit-learn · pandas",
       "category": "Fairness in machine learning",
-      "description": "For my MSc thesis I built on FairLib, a Python library that helps reduce bias in machine learning models through pre-processing and in-processing fairness techniques. Starting from an existing implementation, I made it more complete and easier to adopt.",
-      "note": "The library was used in the European AEQUITAS project, and my name appears among the contributors of one of the project’s research datasets on Zenodo.",
+      "description": "Open-source Python library, published on PyPI, for measuring and reducing bias in machine learning models. On top of my supervisor’s initial DataFrame design, I implemented 3 fairness metrics and 6 mitigation algorithms (3 pre-processing, 3 in-processing) for scikit-learn and PyTorch, each with unit tests, documentation and an example notebook. CI tests it on Linux, Windows and macOS with Python 3.10–3.13.",
+      "note": "On the Adult Income benchmark, Learning Fair Representations narrowed the gap in positive-prediction rates between men and women from 16.5 to 1.3 percentage points, for a 2-point accuracy cost. Used in the EU AEQUITAS project, where I am a credited contributor to a Zenodo research dataset.",
       "repo": "https://github.com/pikalab-unibo-students/master-thesis-dizio-ay2324",
       "proof": "https://zenodo.org/records/11171863",
       "proofType": "dataset",
@@ -191,26 +176,17 @@
           "url": "https://www.aequitas-project.eu/"
         }
       ],
-      "team": "Individual project, supervised by my thesis advisor",
-      "process": [
-        "I worked towards goals with my advisor: we set them together, reviewed them at the next meeting and planned the next steps from there.",
-        "I made most of the architectural decisions: which algorithms to prioritise and how to keep the library easy to use for most people.",
-        "I made the algorithms more robust and compatible with both TensorFlow and PyTorch, designed a new one and finally measured the results."
-      ]
+      "team": "MSc thesis · main author, supervised by my advisor"
     },
     {
       "name": "PositionPal",
       "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
       "category": "User service",
-      "description": "In a group project, I took care of the microservice that handles user registration and profiles: hexagonal architecture, automated tests and a contribution to the CI/CD pipeline.",
+      "description": "In a group project I built the Kotlin microservice for user registration and profiles, with hexagonal architecture. I integrated it with the other services through gRPC and RabbitMQ adapters, covered it with integration tests and contributed to the CI/CD pipeline.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
       "proofType": "documentation",
-      "team": "Team of 3 · I owned the user service",
-      "process": [
-        "We worked in Scrum, with the microservices split across the team.",
-        "I integrated my service with the others through the adapters of the hexagonal architecture, backed by integration tests."
-      ]
+      "team": "Team of 3 · I owned the user service"
     },
     {
       "name": "NesGen",
@@ -219,17 +195,13 @@
       "description": "An experiment in teaching a model to compose NES-style music, the sound of old-school video games. I explored Transformer and GAN approaches on the NES-MDB dataset, with MIDI tokenization and fine-tuning.",
       "repo": "https://github.com/roostico/NesGen",
       "team": "Team of 3",
-      "process": [
-        "In the first phase each of us explored a different direction on our own: four approaches in total.",
-        "We then joined forces on the two most promising ones."
-      ],
       "hideInPdf": true
     },
     {
       "name": "Scooby",
       "tech": "Scala 3 · Akka Typed · DSL",
       "category": "Web crawler",
-      "description": "A web crawler and scraper written in Scala 3, with an internal DSL to describe navigation, extraction and export. Concurrent execution is handled with Akka Typed.",
+      "description": "A web crawler and scraper in Scala 3, with an internal DSL for navigation, extraction and export. Concurrent execution is handled with Akka Typed.",
       "repo": "https://github.com/roostico/scooby",
       "team": "Team of 4 · I built the crawler"
     }
@@ -269,12 +241,6 @@
       "url": "https://www.credly.com/badges/e2c8dc34-88da-40cd-a4fd-f941b3a077f7/linked_in_profile"
     },
     {
-      "title": "Claude 101",
-      "issuer": "Anthropic",
-      "date": "April 2026",
-      "credentialId": "s8t7chuqcvas"
-    },
-    {
       "title": "Professional Cloud Developer",
       "issuer": "Google Cloud",
       "date": "In preparation",
@@ -290,11 +256,11 @@
     "projectsHeading": "Selected projects",
     "credentialsHeading": "Certifications",
     "includeArchive": false,
-    "includeInterests": false
+    "includeInterests": true
   },
   "metadata": {
-    "title": "Valerio Di Zio | Cloud Developer & Cloud Engineer",
-    "description": "Valerio Di Zio, Cloud Developer in Cesena. Google Cloud solutions, mainly in Python. Experience, public projects and a downloadable CV.",
-    "socialDescription": "Cloud Developer building Google Cloud solutions. Experience, projects and CV."
+    "title": "Valerio Di Zio | Software Developer · Python & Cloud",
+    "description": "Valerio Di Zio, software developer in Cesena. Python/FastAPI services and cloud integrations on Google Cloud. Experience, public projects and a downloadable CV.",
+    "socialDescription": "Software developer building Python services and cloud integrations. Experience, projects and CV."
   }
 }

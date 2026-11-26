@@ -26,8 +26,10 @@ const rule = "#d3d8c6";
 const s = StyleSheet.create({
   page: { paddingTop: 38, paddingBottom: 40, paddingHorizontal: 50, fontFamily: "CV", fontSize: 10, lineHeight: "13.6pt", color: ink },
   header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 9, marginBottom: 0 },
+  nameRow: { flexDirection: "row", alignItems: "flex-end" },
   name: { fontFamily: "Display", fontWeight: 700, fontSize: 30, lineHeight: "34pt", letterSpacing: -.4 },
-  dot: { color: olive },
+  // Drawn shape, not a "." character, so ATS parsers read the surname cleanly.
+  dot: { width: 6.5, height: 6.5, borderRadius: 3.25, backgroundColor: olive, marginLeft: 2, marginBottom: 6 },
   role: { fontSize: 12.5, color: accent, fontWeight: 700, marginTop: 2, marginBottom: 6 },
   contact: { fontSize: 9.3, lineHeight: "13pt", color: soft },
   title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 7, marginTop: 13 },
@@ -84,7 +86,7 @@ export function ResumePdf({ data }: { data: ResumeData }) {
   return <Document title={`${person.name} - ${config.title}`} author={person.name} language={data.language}>
     <Page size="A4" style={s.page}>
       <View style={s.header}>
-        <Text style={s.name}>{person.name}<Text style={s.dot}>.</Text></Text>
+        <View style={s.nameRow}><Text style={s.name}>{person.name}</Text><View style={s.dot} /></View>
         <Text style={s.role}>{person.role}</Text>
         <Text style={s.contact}><Dots items={[t.location, person.phone, <Link style={s.link} src={`mailto:${person.email}`}>{person.email}</Link>]} /></Text>
         <Text style={s.contact}><Dots items={[person.linkedinUrl, person.githubUrl, person.websiteUrl].map(url => <Link style={s.link} src={url}>{display(url)}</Link>)} /></Text>
@@ -99,6 +101,24 @@ export function ResumePdf({ data }: { data: ResumeData }) {
         <Text style={s.meta}><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
         {job.details.length === 1 ? <Text>{job.details[0]}</Text> : job.details.map((detail, index) => <View key={index} style={s.bullet}><Text style={s.marker}>•</Text><Text style={s.bulletText}>{detail}</Text></View>)}
         <Process items={job.process} />
+      </View>)}
+
+      {data.skills.length > 0 && <Heading>{config.skillsHeading}</Heading>}
+      {data.skills.map(skill => <View key={skill.id} style={s.skillRow} wrap={false}>
+        <Text style={s.skillLabel}>{skill.label}</Text><Text style={s.skillValue}>{skill.value}</Text>
+      </View>)}
+
+      {data.projects.length > 0 && <Heading>{config.projectsHeading}</Heading>}
+      {data.projects.filter(project => !project.hideInPdf).map((project, index) => <View key={index} style={s.project} wrap={false}>
+        <Text style={s.projectTitle} minPresenceAhead={40}>{project.name}<Text style={s.category}>  ·  {project.category}</Text></Text>
+        {project.team && <Text style={s.meta}>{project.team}</Text>}
+        <Text>{project.description}{project.note ? ` ${project.note}` : ""}</Text>
+        <Process items={project.process} />
+        <Text style={s.projectLinks}><Dots items={[
+          <Link src={project.repo} style={s.link}>{t.repository}</Link>,
+          project.proof ? <Link src={project.proof} style={s.link}>{project.proofType === "dataset" ? t.dataset : t.documentation}</Link> : null,
+          <Text style={s.team}>{project.tech}</Text>,
+        ]} /></Text>
       </View>)}
 
       <View wrap={false}>
@@ -121,26 +141,12 @@ export function ResumePdf({ data }: { data: ResumeData }) {
         ]} /></Text>
       </View>)}
 
-      {data.skills.length > 0 && <Heading>{config.skillsHeading}</Heading>}
-      {data.skills.map(skill => <View key={skill.id} style={s.skillRow} wrap={false}>
-        <Text style={s.skillLabel}>{skill.label}</Text><Text style={s.skillValue}>{skill.value}</Text>
-      </View>)}
-
-      {data.projects.length > 0 && <Heading>{config.projectsHeading}</Heading>}
-      {data.projects.filter(project => !project.hideInPdf).map((project, index) => <View key={index} style={s.project} wrap={false}>
-        <Text style={s.projectTitle} minPresenceAhead={40}>{project.name}<Text style={s.category}>  ·  {project.category}</Text></Text>
-        {project.team && <Text style={s.meta}>{project.team}</Text>}
-        <Text>{project.description}{project.note ? ` ${project.note}` : ""}</Text>
-        <Process items={project.process} />
-        <Text style={s.projectLinks}><Dots items={[
-          <Link src={project.repo} style={s.link}>{t.repository}</Link>,
-          project.proof ? <Link src={project.proof} style={s.link}>{project.proofType === "dataset" ? t.dataset : t.documentation}</Link> : null,
-          <Text style={s.team}>{project.tech}</Text>,
-        ]} /></Text>
-      </View>)}
-
-      <View wrap={false}><Heading>{t.languages}</Heading><Text>{t.languageDetail}</Text><Text style={s.meta}>{t.availability}</Text></View>
-      {config.includeInterests && <View wrap={false}><Heading>{t.interests}</Heading><Text>{t.interestsDetail}</Text></View>}
+      {/* Availability is stated in the profile, so this block keeps only languages and, optionally, interests. */}
+      <View wrap={false}>
+        <Heading>{config.includeInterests ? `${t.languages} · ${t.interests}` : t.languages}</Heading>
+        <Text>{t.languageDetail}</Text>
+        {config.includeInterests && <Text>{t.interestsDetail}</Text>}
+      </View>
       {config.includeArchive && data.archive.length > 0 && <View><Heading>{t.archive}</Heading>{data.archive.map((project, index) => <Text key={index}><Dots items={[project.name, project.year, project.url ? <Link src={project.url} style={s.link}>{t.repository}</Link> : null]} /></Text>)}</View>}
     </Page>
   </Document>;
