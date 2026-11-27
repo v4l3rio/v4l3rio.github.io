@@ -6,15 +6,17 @@ import { Icon } from "@/components/ui/icon";
 import { appearanceTokens, defaultAppearance } from "@/lib/cojeev/appearance-tokens";
 import { copy, getContent, loadContent, links as fallbackLinks, type Language } from "./content";
 import { DownloadLink } from "./DownloadLink";
+import { TechFilter } from "./TechFilter";
+import { highlight, jobId, jobTexts, mentions, projectId, projectTexts, usedIn } from "./lib/tech-filter";
 
 function ExternalLink({ href, children, className = "text-link" }: { href: string; children: ReactNode; className?: string }) {
   return <a href={href} className={className} target="_blank" rel="noopener noreferrer">{children}<Icon name="arrow-up-right" aria-hidden="true" feedback={false} /></a>;
 }
 
 /** The olive-ruled callout: how the work was done (team, method, decisions) and what it led to. Same block as the PDF. */
-function Callout({ label, items }: { label: string; items?: string[] }) {
+function Callout({ label, items, term }: { label: string; items?: string[]; term: string | null }) {
   if (!items?.length) return null;
-  return <ul className="callout" role="list" aria-label={label}>{items.map(item => <li key={item}>{item}</li>)}</ul>;
+  return <ul className="callout" role="list" aria-label={label}>{items.map(item => <li key={item}>{highlight(item, term)}</li>)}</ul>;
 }
 
 export function App({ language = "en" }: { language?: Language }) {
@@ -23,6 +25,11 @@ export function App({ language = "en" }: { language?: Language }) {
   const [downloadError, setDownloadError] = useState(false);
   const t = data.text;
   const { person, experience, skills, projects, archive, credentials } = data;
+  const [selected, setSelected] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const hl = (text: string) => highlight(text, selected);
+  const dim = (texts: (string | undefined)[]) => selected && !mentions(selected, texts) ? "is-dim" : "";
   const links = { email: `mailto:${person.email}`, github: person.githubUrl, linkedin: person.linkedinUrl, cv: fallbackLinks.cv };
   useEffect(() => {
     document.title = data.metadata.title;
@@ -104,14 +111,16 @@ export function App({ language = "en" }: { language?: Language }) {
       </section>
 
       <section className="section container experience-section" id="experience" aria-labelledby="experience-title">
-        <div className="section-heading"><p className="eyebrow">{t.work}</p><h2 id="experience-title">{t.workIntro}</h2></div>
+        <div className="section-heading"><p className="eyebrow">{t.work}</p><h2 id="experience-title">{t.workIntro}</h2>
+          {mounted && data.filters?.length ? <TechFilter label={t.filterByTech} filters={data.filters} selected={selected} onSelect={setSelected} hits={selected ? usedIn(selected, data) : []} /> : null}</div>
         <div className="experience-list">
-          {experience.map((job, index) => <article className={`job ${index === 0 ? "current-job" : ""}`} key={job.company}>
+          {experience.map((job, index) => <article id={jobId(job)} className={`job ${index === 0 ? "current-job" : ""} ${dim(jobTexts(job))}`.trim()} key={job.company}>
             <div className="job-heading"><h3>{job.company}</h3><p className="metadata">{job.date}</p></div>
-            <p className="job-role">{job.role}</p>
+            <p className="job-role">{hl(job.role)}</p>
             {job.team && <p className="metadata job-team">{job.team}</p>}
-            {job.details.length > 1 ? <ul className="job-details">{job.details.map(detail => <li key={detail}>{detail}</li>)}</ul> : <p>{job.details[0]}</p>}
-            <Callout label={t.howIWorked} items={job.process} />
+            {job.details.length > 1 ? <ul className="job-details">{job.details.map(detail => <li key={detail}>{hl(detail)}</li>)}</ul> : <p>{hl(job.details[0])}</p>}
+            {job.stack && <div className="job-stack"><h4>{hl(job.stack.title)}</h4><dl>{job.stack.groups.map(group => <div key={group.label}><dt>{hl(group.label)}</dt><dd>{hl(group.items.join(", "))}</dd></div>)}</dl></div>}
+            <Callout label={t.howIWorked} items={job.process} term={selected} />
           </article>)}
           <p className="confidentiality metadata">{t.workPrivacy}</p>
         </div>
@@ -126,13 +135,13 @@ export function App({ language = "en" }: { language?: Language }) {
       <section className="projects-section section" id="projects" aria-labelledby="projects-title">
         <div className="container">
           <div className="projects-heading"><div><p className="eyebrow">{t.universityWork}</p><h2 id="projects-title">{t.selectedProjects}</h2></div><p>{t.projectsIntro}</p></div>
-          {projects.length > 0 && <article className="thesis-project">
-            <div className="thesis-title"><p className="eyebrow">{t.thesis}</p><h3>{projects[0].name}</h3><p>{projects[0].category}</p>{projects[0].team && <p className="metadata project-team">{projects[0].team}</p>}<p className="metadata">{projects[0].tech}</p></div>
-            <div className="thesis-detail"><p>{projects[0].description}</p>{projects[0].note && <p>{projects[0].note}</p>}<Callout label={t.howIWorked} items={projects[0].process} /><div className="link-group"><ExternalLink href={projects[0].repo}>{t.repository}</ExternalLink>{projects[0].proof && <ExternalLink href={projects[0].proof}>{projects[0].proofType === "dataset" ? t.dataset : t.documentation}</ExternalLink>}</div></div>
+          {projects.length > 0 && <article id={projectId(projects[0])} className={`thesis-project ${dim(projectTexts(projects[0]))}`.trim()}>
+            <div className="thesis-title"><p className="eyebrow">{t.thesis}</p><h3>{projects[0].name}</h3><p>{projects[0].category}</p>{projects[0].team && <p className="metadata project-team">{projects[0].team}</p>}<p className="metadata">{hl(projects[0].tech)}</p></div>
+            <div className="thesis-detail"><p>{hl(projects[0].description)}</p>{projects[0].note && <p>{hl(projects[0].note)}</p>}<Callout label={t.howIWorked} items={projects[0].process} term={selected} /><div className="link-group"><ExternalLink href={projects[0].repo}>{t.repository}</ExternalLink>{projects[0].proof && <ExternalLink href={projects[0].proof}>{projects[0].proofType === "dataset" ? t.dataset : t.documentation}</ExternalLink>}</div></div>
           </article>}
-          <div className="project-list">{projects.slice(1).map(project => <article className="project-row" key={project.name}>
+          <div className="project-list">{projects.slice(1).map(project => <article id={projectId(project)} className={`project-row ${dim(projectTexts(project))}`.trim()} key={project.name}>
             <div><h3>{project.name}</h3><p className="project-category">{project.category}</p>{project.team && <p className="metadata project-team">{project.team}</p>}</div>
-            <div><p>{project.description}</p>{project.note && <p>{project.note}</p>}<Callout label={t.howIWorked} items={project.process} /><p className="metadata project-tech">{project.tech}</p></div>
+            <div><p>{hl(project.description)}</p>{project.note && <p>{hl(project.note)}</p>}<Callout label={t.howIWorked} items={project.process} term={selected} /><p className="metadata project-tech">{hl(project.tech)}</p></div>
             <div className="project-links"><ExternalLink href={project.repo}>{t.github}</ExternalLink>{project.proof && <ExternalLink href={project.proof}>{t.documentation}</ExternalLink>}</div>
           </article>)}</div>
           <Accordion data-motion="off" type="single" collapsible appearance="editorial" className="project-archive">

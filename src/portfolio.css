@@ -137,7 +137,28 @@ p, li, dd { overflow-wrap: break-word; }
 .error-page h1 { font-size: 40px; }
 .error-page a, .error-page button { min-height: 44px; text-decoration: underline; }
 
+/* Technology filter: the column heading stays in view while the jobs scroll past. */
+.tech-filter { margin-top: 32px; }
+.tech-filter-label { margin-bottom: 12px; }
+.tech-filter-group { gap: 6px; }
+.tech-filter-item { height: 44px; padding-inline: 16px; }
+/* Pressed stays ink in both themes; the kit's dark-mode pink would fight the olive highlight. */
+:root .tech-filter-item[aria-checked="true"], :root[data-mode="dark"] .tech-filter-item[aria-checked="true"] { background: var(--v-ink); color: var(--v-on-ink); }
+.tech-filter-status { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 .4em; font-size: 15px; color: var(--v-text-2); }
+.tech-filter-status a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; }
+mark { background: color-mix(in srgb, var(--v-olive) 38%, transparent); color: var(--v-text); border-radius: 3px; padding: 0 .1em; }
+.is-dim, .is-dim * { color: var(--v-text-3); transition: color .2s; }
+
+/* Google Cloud stack inside the Go Reply entry: a quiet ruled table, no boxes. */
+.job-stack { margin-top: 28px; }
+.job-stack h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.job-stack dl { margin: 0; border-bottom: 1px solid var(--v-border); }
+.job-stack dl > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 0 24px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--v-border); }
+.job-stack dt { font-size: 15px; color: var(--v-text-3); }
+.job-stack dd { margin: 0; font-size: 16px; color: var(--v-text-2); }
+
 @media (min-width: 761px) {
+  .experience-section > .section-heading { position: sticky; top: 28px; align-self: start; }
   .project-archive [data-slot="accordion-content-inner"] { grid-template-columns: minmax(220px, .8fr) minmax(0, 2fr); gap: 40px; }
 }
 
@@ -171,6 +192,7 @@ p, li, dd { overflow-wrap: break-word; }
   .section-heading h2 { max-width: 500px; }
   .toolkit { grid-template-columns: 1fr; gap: 28px; }
   .toolkit dl { grid-template-columns: 1fr; gap: 20px; }
+  .job-stack dl > div { grid-template-columns: 1fr; gap: 2px; }
   .job-heading { display: block; }
   .job-heading .metadata { margin-top: 8px; }
   .job-role { margin-top: 12px; }

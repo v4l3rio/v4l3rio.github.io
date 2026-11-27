@@ -200,6 +200,9 @@
         },
         "howIWorked": {
           "type": "string"
+        },
+        "filterByTech": {
+          "type": "string"
         }
       },
       "required": [
@@ -264,7 +267,8 @@
         "preparingPdf",
         "downloadError",
         "contentError",
-        "howIWorked"
+        "howIWorked",
+        "filterByTech"
       ],
       "additionalProperties": false
     },
@@ -352,6 +356,13 @@
       ],
       "additionalProperties": false
     },
+    "filters": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "experience": {
       "type": "array",
       "items": {
@@ -381,6 +392,46 @@
             "items": {
               "type": "string"
             }
+          },
+          "stack": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "groups": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "items": {
+                      "minItems": 1,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "items"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "title",
+              "groups"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [

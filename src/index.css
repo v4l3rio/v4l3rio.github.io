@@ -12,6 +12,8 @@
 @import "@/styles/cojeev/button.css";
 @import "@/styles/cojeev/control-appearance.css";
 @import "@/styles/cojeev/accordion.css";
+@import "@/styles/cojeev/toggle.css";
+@import "@/styles/cojeev/toggle-group.css";
 
 @custom-variant dark (&:is(.dark *));
 

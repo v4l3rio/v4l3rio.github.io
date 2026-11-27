@@ -63,7 +63,8 @@
     "preparingPdf": "Preparazione PDF…",
     "downloadError": "Non sono riuscito a generare il CV. Riprova tra un attimo.",
     "contentError": "Non sono riuscito ad aggiornare i contenuti. Prova a ricaricare la pagina.",
-    "howIWorked": "Come ho lavorato"
+    "howIWorked": "Come ho lavorato",
+    "filterByTech": "Filtra per tecnologia"
   },
   "person": {
     "name": "Valerio Di Zio",
@@ -83,6 +84,7 @@
   "education": {
     "date": "2022 – 2025"
   },
+  "filters": ["Python", "FastAPI", "Google Cloud", "TypeScript", "Angular", "CI/CD", "PyTorch", "Kotlin", "Scala", "RabbitMQ"],
   "experience": [
     {
       "company": "Go Reply",
@@ -93,6 +95,18 @@
         "Sviluppo servizi Python/FastAPI serverless su Cloud Run per elaborazione dati e integrazioni, con Pub/Sub, Cloud Tasks, Cloud Scheduler, BigQuery, Firestore e Cloud Storage.",
         "Contribuisco a CI/CD (Cloud Build), IAM, Secret Manager, monitoraggio e logging; mi occupo di troubleshooting e supporto tecnico."
       ],
+      "stack": {
+        "title": "Stack Google Cloud",
+        "groups": [
+          { "label": "Esecuzione", "items": ["Cloud Run"] },
+          { "label": "Eventi e code", "items": ["Pub/Sub", "Cloud Tasks", "Cloud Scheduler"] },
+          { "label": "Dati", "items": ["BigQuery", "Firestore", "Cloud Storage"] },
+          { "label": "AI", "items": ["Vertex AI"] },
+          { "label": "Sicurezza", "items": ["IAM", "Secret Manager"] },
+          { "label": "Osservabilità", "items": ["Cloud Monitoring", "Cloud Logging"] },
+          { "label": "CI/CD", "items": ["Cloud Build"] }
+        ]
+      },
       "process": [
         "Lavoro a diretto contatto con il cliente tra raccolta dei requisiti, workshop, demo e cicli di feedback, e prendo parte alle decisioni tecniche.",
         "Lavoriamo in modo agile, spesso in Scrum: tracciamo i task su uno strumento interno e ogni modifica passa dalla revisione del team tramite pull request."
