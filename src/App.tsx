@@ -111,6 +111,8 @@ export function App({ language = "en" }: { language?: Language }) {
       </section>
 
       <section className="section container experience-section" id="experience" aria-labelledby="experience-title">
+        {/* Its own box, so the sticky heading stops where the jobs end instead of riding over the toolkit. */}
+        <div className="experience-main">
         <div className="section-heading"><p className="eyebrow">{t.work}</p><h2 id="experience-title">{t.workIntro}</h2>
           {mounted && data.filters?.length ? <TechFilter label={t.filterByTech} filters={data.filters} selected={selected} onSelect={setSelected} hits={selected ? usedIn(selected, data) : []} /> : null}</div>
         <div className="experience-list">
@@ -123,6 +125,7 @@ export function App({ language = "en" }: { language?: Language }) {
             <Callout label={t.howIWorked} items={job.process} term={selected} />
           </article>)}
           <p className="confidentiality metadata">{t.workPrivacy}</p>
+        </div>
         </div>
         <div className="toolkit" aria-labelledby="toolkit-title">
           <div className="toolkit-heading"><h3 id="toolkit-title">{t.skills}</h3><p className="metadata">{t.skillsIntro}</p></div>

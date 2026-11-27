@@ -43,7 +43,7 @@ for (const language of ["en", "it"] as const) {
   test(`${language}: the filter column stays sticky on desktop and the dimmed text stays accessible`, async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(path);
-    const heading = page.locator(".experience-section > .section-heading");
+    const heading = page.locator(".experience-main > .section-heading");
     await page.getByRole("radio", { name: "Python", exact: true }).click();
     await page.locator("#work-visup").scrollIntoViewIfNeeded();
     expect((await heading.boundingBox())!.y).toBeGreaterThanOrEqual(0);
@@ -56,11 +56,28 @@ for (const language of ["en", "it"] as const) {
     }
   });
 
+  for (const width of [900, 1440]) {
+    test(`${language}: at ${width}px the sticky heading never rides over the toolkit`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(path);
+      await expect(page.locator(".tech-filter")).toBeVisible();
+      const toolkit = page.locator(".toolkit");
+      for (const offset of [600, 300, 80]) {
+        await toolkit.evaluate((el, gap) => scrollTo(0, el.getBoundingClientRect().top + scrollY - gap), offset);
+        const overlap = await page.evaluate(() => {
+          const heading = document.querySelector(".experience-main > .section-heading")!.getBoundingClientRect();
+          return heading.bottom - document.querySelector(".toolkit")!.getBoundingClientRect().top;
+        });
+        expect(overlap).toBeLessThanOrEqual(0);
+      }
+    });
+  }
+
   test(`${language}: at 375px the filter sits above the jobs and every target is 44px`, async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
     await page.goto(path);
     await page.getByRole("radio", { name: "Python", exact: true }).click();
-    const sticky = await page.locator(".experience-section > .section-heading").evaluate(el => getComputedStyle(el).position);
+    const sticky = await page.locator(".experience-main > .section-heading").evaluate(el => getComputedStyle(el).position);
     expect(sticky).toBe("static");
     const filterBox = (await page.locator(".tech-filter").boundingBox())!;
     expect(filterBox.y).toBeLessThan((await page.locator(".experience-list").boundingBox())!.y);

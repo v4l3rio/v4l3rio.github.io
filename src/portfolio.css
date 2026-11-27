@@ -52,7 +52,7 @@ p, li, dd { overflow-wrap: break-word; }
 .hero-art p { text-align: center; font-size: 14px; font-weight: 500; color: var(--v-text-3); margin-top: -12px; }
 .hero-footer { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; border-bottom: 1px solid var(--v-border); margin-top: 32px; padding: 24px 0; font-size: 14px; color: var(--v-text-3); }
 .hero-footer a { margin-left: auto; color: var(--v-text-2); min-height: 44px; display: inline-flex; align-items: center; }
-.experience-section { display: grid; grid-template-columns: .78fr 1.65fr; gap: 56px 84px; }
+.experience-main { display: grid; grid-template-columns: .78fr 1.65fr; gap: 56px 84px; }
 .section-heading h2 { max-width: 320px; }
 .job + .job { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--v-border); }
 .job-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; align-items: baseline; margin-bottom: 8px; }
@@ -64,7 +64,7 @@ p, li, dd { overflow-wrap: break-word; }
 .job-team { margin: -10px 0 18px; }
 .project-team { margin-top: 10px; }
 .callout { margin-top: 22px; padding: 2px 0 2px 18px; border-left: 2px solid var(--v-olive); color: var(--v-text-2); list-style: none; display: grid; gap: 10px; }
-.toolkit { grid-column: 1 / -1; border-top: 1px solid var(--v-border); padding-top: 40px; display: grid; grid-template-columns: .78fr 1.65fr; gap: 84px; }
+.toolkit { margin-top: 56px; border-top: 1px solid var(--v-border); padding-top: 40px; display: grid; grid-template-columns: .78fr 1.65fr; gap: 84px; }
 .toolkit h3 { font-size: 24px; }
 .toolkit-heading .metadata { margin-top: 12px; max-width: 30ch; }
 .toolkit dl { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin: 0; }
@@ -144,10 +144,18 @@ p, li, dd { overflow-wrap: break-word; }
 .tech-filter-item { height: 44px; padding-inline: 16px; }
 /* Pressed stays ink in both themes; the kit's dark-mode pink would fight the olive highlight. */
 :root .tech-filter-item[aria-checked="true"], :root[data-mode="dark"] .tech-filter-item[aria-checked="true"] { background: var(--v-ink); color: var(--v-on-ink); }
-.tech-filter-status { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 .4em; font-size: 15px; color: var(--v-text-2); }
+.tech-filter-status { margin-top: 8px; font-size: 15px; color: var(--v-text-2); }
+.tech-filter-status:empty { display: none; }
 .tech-filter-status a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; }
+.tech-filter-sep { color: var(--portfolio-accent); }
+.tech-filter-hit { display: inline-flex; align-items: center; }
 mark { background: color-mix(in srgb, var(--v-olive) 38%, transparent); color: var(--v-text); border-radius: 3px; padding: 0 .1em; }
-.is-dim, .is-dim * { color: var(--v-text-3); transition: color .2s; }
+/* The lightest grey that still clears 4.5:1 on every surface it can sit on (page, beige projects band, thesis card). */
+:root { --dim-ink: rgb(104 106 110); }
+:root[data-mode="dark"] { --dim-ink: rgb(142 144 150); }
+.is-dim, .is-dim * { color: var(--dim-ink); transition: color .2s; }
+.is-dim .job-details li::marker { color: var(--dim-ink); }
+.is-dim .callout { border-left-color: var(--v-border); }
 
 /* Google Cloud stack inside the Go Reply entry: a quiet ruled table, no boxes. */
 .job-stack { margin-top: 28px; }
@@ -157,8 +165,11 @@ mark { background: color-mix(in srgb, var(--v-olive) 38%, transparent); color: v
 .job-stack dt { font-size: 15px; color: var(--v-text-3); }
 .job-stack dd { margin: 0; font-size: 16px; color: var(--v-text-2); }
 
+/* Only where the heading and filter fit in the viewport; otherwise its bottom would be unreachable while it sticks. */
+@media (min-width: 761px) and (min-height: 640px) {
+  .experience-main > .section-heading { position: sticky; top: 28px; align-self: start; }
+}
 @media (min-width: 761px) {
-  .experience-section > .section-heading { position: sticky; top: 28px; align-self: start; }
   .project-archive [data-slot="accordion-content-inner"] { grid-template-columns: minmax(220px, .8fr) minmax(0, 2fr); gap: 40px; }
 }
 
@@ -166,7 +177,7 @@ mark { background: color-mix(in srgb, var(--v-olive) 38%, transparent); color: v
   .site-header { gap: 18px; }
   .main-nav { gap: 16px; }
   .hero { gap: 32px; }
-  .experience-section, .toolkit { gap: 48px; }
+  .experience-main, .toolkit { gap: 48px; }
   .thesis-project { gap: 40px; padding: 36px; }
   .about-section, .contact-layout { column-gap: 48px; }
   .project-row { grid-template-columns: .75fr 1.5fr; gap: 24px; }
@@ -188,11 +199,13 @@ mark { background: color-mix(in srgb, var(--v-olive) 38%, transparent); color: v
   .hero-footer { margin-top: 32px; gap: 0 24px; align-items: start; }
   .hero-footer p { width: 100%; }
   .hero-footer a { margin: 8px 0 0; }
-  .experience-section { grid-template-columns: 1fr; gap: 36px; }
+  .experience-main { grid-template-columns: 1fr; gap: 36px; }
   .section-heading h2 { max-width: 500px; }
-  .toolkit { grid-template-columns: 1fr; gap: 28px; }
+  .toolkit { margin-top: 36px; grid-template-columns: 1fr; gap: 28px; }
   .toolkit dl { grid-template-columns: 1fr; gap: 20px; }
-  .job-stack dl > div { grid-template-columns: 1fr; gap: 2px; }
+  .job-stack dl > div { grid-template-columns: minmax(92px, 32%) minmax(0, 1fr); gap: 0 14px; padding: 8px 0; }
+  .job-stack dt { font-size: 14px; }
+  .job-stack dd { font-size: 15px; }
   .job-heading { display: block; }
   .job-heading .metadata { margin-top: 8px; }
   .job-role { margin-top: 12px; }
