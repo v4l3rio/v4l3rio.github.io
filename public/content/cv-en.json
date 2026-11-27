@@ -89,9 +89,9 @@
       "role": "Cloud Developer / IT Consultant",
       "date": "September 2025 – present",
       "details": [
-        "Design and build Google Cloud solutions for clients, from requirements and proofs of concept to architecture choices.",
-        "Develop Python/FastAPI services for serverless applications, data processing and cloud integrations.",
-        "Contribute to CI/CD, IAM, monitoring and logging; handle troubleshooting and technical support."
+        "Design and build Google Cloud solutions across 3+ client projects, from requirements and proofs of concept to architecture choices.",
+        "Develop serverless Python/FastAPI services on Cloud Run for data processing and integrations, using Pub/Sub, Cloud Tasks, Cloud Scheduler, BigQuery, Firestore and Cloud Storage.",
+        "Contribute to CI/CD (Cloud Build), IAM, Secret Manager, monitoring and logging; handle troubleshooting and technical support."
       ],
       "process": [
         "I work directly with client stakeholders through requirements gathering, workshops, demos and feedback cycles, and take part in technical decisions.",
@@ -194,7 +194,7 @@
       "name": "PositionPal",
       "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
       "category": "User management",
-      "description": "A group project built as Kotlin microservices; I also contributed to the CI/CD pipeline.",
+      "description": "Group project: Kotlin microservices talking over gRPC and RabbitMQ; I also contributed to the CI/CD pipeline.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
       "proofType": "documentation",
