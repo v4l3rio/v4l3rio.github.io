@@ -93,7 +93,6 @@
         "Sviluppo servizi Python/FastAPI per applicazioni serverless, elaborazione dati e integrazioni cloud.",
         "Contribuisco a CI/CD, IAM, monitoraggio e logging; mi occupo di troubleshooting e supporto tecnico."
       ],
-      "team": "Team di 5, tra sviluppatori, architetti e un PM",
       "process": [
         "Lavoro a diretto contatto con il cliente tra raccolta dei requisiti, workshop, demo e cicli di feedback, e prendo parte alle decisioni tecniche.",
         "Lavoriamo in modo agile, spesso in Scrum: tracciamo i task su uno strumento interno e ogni modifica passa dalla revisione del team tramite pull request."
@@ -118,7 +117,7 @@
       "details": [
         "Ho sviluppato il frontend Angular (TypeScript) di una dashboard di visualizzazione dati per l’Industria 4.0 e l’ho integrato con le API del backend, lavorando con Git e CI/CD."
       ],
-      "team": "Part-time · Team di 3",
+      "team": "Part-time",
       "process": [
         "Lavoravamo in sprint settimanali, con i task tracciati su uno strumento condiviso.",
         "Mi coordinavo costantemente con lo sviluppatore backend e con il PM, tra riunioni e chat aziendale."
@@ -195,14 +194,12 @@
       "name": "PositionPal",
       "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
       "category": "Gestione utenti",
-      "description": "In un progetto di gruppo ho sviluppato in Kotlin il microservizio per registrazione e profilo degli utenti, con architettura esagonale, e ho contribuito alla pipeline CI/CD.",
+      "description": "Progetto di gruppo a microservizi in Kotlin; ho contribuito anche alla pipeline CI/CD.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
       "proofType": "documentation",
-      "team": "Team di 3 · responsabile del servizio utenti",
       "process": [
-        "Lavoravamo in Scrum, con i microservizi suddivisi tra i membri del team.",
-        "L’ho integrato con gli altri servizi tramite adapter gRPC e RabbitMQ, verificandolo con test di integrazione."
+        "Mi sono occupato dello user service, il microservizio che gestisce gli utenti, sviluppato con architettura esagonale."
       ]
     },
     {
@@ -211,7 +208,6 @@
       "category": "Musica generativa",
       "description": "Un esperimento per far comporre a un modello musica in stile NES, quella dei videogiochi di una volta. Ho esplorato approcci Transformer e GAN sul dataset NES-MDB, con tokenizzazione MIDI e fine-tuning.",
       "repo": "https://github.com/roostico/NesGen",
-      "team": "Team di 3",
       "hideInPdf": true,
       "process": [
         "Nella prima fase ognuno ha esplorato in autonomia strade diverse: quattro approcci in tutto.",

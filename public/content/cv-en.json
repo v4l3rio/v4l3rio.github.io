@@ -93,7 +93,6 @@
         "Develop Python/FastAPI services for serverless applications, data processing and cloud integrations.",
         "Contribute to CI/CD, IAM, monitoring and logging; handle troubleshooting and technical support."
       ],
-      "team": "Team of 5: developers, architects and a PM",
       "process": [
         "I work directly with client stakeholders through requirements gathering, workshops, demos and feedback cycles, and take part in technical decisions.",
         "We work in an agile way, often with Scrum: tasks are tracked in an internal tool and every change goes through team review via pull requests."
@@ -118,7 +117,7 @@
       "details": [
         "Built the Angular (TypeScript) frontend of an Industry 4.0 data visualisation dashboard and integrated it with the backend APIs, using Git and CI/CD."
       ],
-      "team": "Part-time · Team of 3",
+      "team": "Part-time",
       "process": [
         "We worked in weekly sprints, with tasks tracked in a shared tool.",
         "I coordinated constantly with the backend developer and the PM, through meetings and the company chat."
@@ -194,15 +193,13 @@
     {
       "name": "PositionPal",
       "tech": "Kotlin · gRPC · RabbitMQ · PostgreSQL",
-      "category": "User service",
-      "description": "In a group project I built the Kotlin microservice for user registration and profiles, with hexagonal architecture, and contributed to the CI/CD pipeline.",
+      "category": "User management",
+      "description": "A group project built as Kotlin microservices; I also contributed to the CI/CD pipeline.",
       "repo": "https://github.com/position-pal/user-service",
       "proof": "https://position-pal.github.io/",
       "proofType": "documentation",
-      "team": "Team of 3 · I owned the user service",
       "process": [
-        "We worked in Scrum, with the microservices split among team members.",
-        "I integrated it with the other services through gRPC and RabbitMQ adapters, verified by integration tests."
+        "I handled the user service, the microservice that manages users, built with hexagonal architecture."
       ]
     },
     {
@@ -211,7 +208,6 @@
       "category": "Generative music",
       "description": "An experiment in teaching a model to compose NES-style music, the sound of old-school video games. I explored Transformer and GAN approaches on the NES-MDB dataset, with MIDI tokenization and fine-tuning.",
       "repo": "https://github.com/roostico/NesGen",
-      "team": "Team of 3",
       "hideInPdf": true,
       "process": [
         "In the first phase each of us explored a different direction on our own: four approaches in total.",
