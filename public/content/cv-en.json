@@ -163,7 +163,8 @@
       "id": "cloud",
       "label": "Google Cloud",
       "value": "Cloud Run, Pub/Sub, BigQuery, Firestore, Cloud Storage, Cloud Tasks, Cloud Scheduler, IAM, Secret Manager, Cloud Monitoring, Cloud Logging, Vertex AI.",
-      "wide": true
+      "wide": true,
+      "hideInPdf": true
     },
     {
       "id": "devops",
@@ -222,7 +223,6 @@
       "category": "Generative music",
       "description": "An experiment in teaching a model to compose NES-style music, the sound of old-school video games. I explored Transformer and GAN approaches on the NES-MDB dataset, with MIDI tokenization and fine-tuning.",
       "repo": "https://github.com/roostico/NesGen",
-      "hideInPdf": true,
       "process": [
         "In the first phase each of us explored a different direction on our own: four approaches in total.",
         "We then joined forces on the two most promising ones."
@@ -286,7 +286,7 @@
     "skillsHeading": "Technical skills",
     "projectsHeading": "Selected projects",
     "credentialsHeading": "Certifications",
-    "includeArchive": false,
+    "includeArchive": true,
     "includeInterests": true
   },
   "metadata": {

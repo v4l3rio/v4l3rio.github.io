@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Document, Page, Text, View, Link, Font, StyleSheet, pdf } from "@react-pdf/renderer";
 import type { ResumeData } from "./content";
+import { jobTexts, mentions } from "./lib/tech-filter";
 
 // Fonts in /fonts/cv are static TTFs with the "liga" feature removed, so "fi"/"fl"
 // stay two real characters in the PDF text layer (ATS parsing, copy and search).
@@ -24,32 +25,32 @@ const olive = "#A8BC75";
 const rule = "#d3d8c6";
 
 const s = StyleSheet.create({
-  page: { paddingTop: 36, paddingBottom: 36, paddingHorizontal: 48, fontFamily: "CV", fontSize: 9.7, lineHeight: "13.2pt", color: ink },
-  header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 9, marginBottom: 0 },
+  page: { paddingTop: 32, paddingBottom: 32, paddingHorizontal: 48, fontFamily: "CV", fontSize: 9.5, lineHeight: "12.6pt", color: ink },
+  header: { borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 8, marginBottom: 0 },
   nameRow: { flexDirection: "row", alignItems: "flex-end" },
   name: { fontFamily: "Display", fontWeight: 700, fontSize: 30, lineHeight: "34pt", letterSpacing: -.4 },
   // Drawn shape, not a "." character, so ATS parsers read the surname cleanly.
   dot: { width: 6.5, height: 6.5, borderRadius: 3.25, backgroundColor: olive, marginLeft: 2, marginBottom: 6 },
   role: { fontSize: 12.5, color: accent, fontWeight: 700, marginTop: 2, marginBottom: 6 },
   contact: { fontSize: 9.3, lineHeight: "13pt", color: soft },
-  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 6, marginTop: 11 },
-  paragraph: { marginBottom: 4 },
+  title: { fontFamily: "Display", fontWeight: 700, fontSize: 13.5, lineHeight: "17pt", color: accent, borderBottomWidth: .75, borderBottomColor: rule, paddingBottom: 3, marginBottom: 5, marginTop: 8 },
+  paragraph: { marginBottom: 3 },
   row: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end" },
   heading: { fontSize: 11, fontWeight: 700, lineHeight: "14pt", flex: 1, paddingRight: 12 },
   date: { fontSize: 9.3, lineHeight: "14pt", color: soft },
   meta: { fontSize: 9.3, lineHeight: "12.5pt", color: soft, marginTop: 1, marginBottom: 3 },
   company: { fontWeight: 700, color: accent },
-  job: { marginBottom: 9 },
-  bullet: { flexDirection: "row", marginBottom: 2 },
+  job: { marginBottom: 7 },
+  bullet: { flexDirection: "row", marginBottom: 1.5 },
   marker: { width: 11, color: accent },
   bulletText: { flex: 1 },
-  credential: { marginBottom: 4 },
-  credentialMeta: { fontSize: 9.3, lineHeight: "12pt", color: soft },
+  credential: { marginBottom: 3 },
+  credentialMeta: { fontSize: 9.3, lineHeight: "11.5pt", color: soft },
   credentialTitle: { fontWeight: 700, fontSize: 10.3, lineHeight: "13.5pt", flex: 1, paddingRight: 12 },
-  skillRow: { flexDirection: "row", marginBottom: 3.5 },
+  skillRow: { flexDirection: "row", marginBottom: 2.5 },
   skillLabel: { width: 132, fontWeight: 700, paddingRight: 10 },
   skillValue: { flex: 1 },
-  project: { marginBottom: 9 },
+  project: { marginBottom: 6 },
   projectTitle: { fontSize: 11, fontWeight: 700, lineHeight: "14pt" },
   category: { fontWeight: 400, color: soft },
   projectLinks: { fontSize: 9.3, marginTop: 2 },
@@ -57,7 +58,17 @@ const s = StyleSheet.create({
   sep: { color: olive },
   team: { fontSize: 9.3, lineHeight: "12.5pt", color: soft },
   callout: { marginTop: 4, borderLeftWidth: 1.5, borderLeftColor: olive, paddingLeft: 9, paddingVertical: 1.5 },
-  calloutText: { fontSize: 9.3, lineHeight: "12.6pt" },
+  calloutText: { fontSize: 9.1, lineHeight: "12.2pt" },
+  // Paper versions of the website's Google Cloud stack, technology filter and archive.
+  stack: { flexDirection: "row", flexWrap: "wrap", fontSize: 9.1, lineHeight: "12.2pt", color: soft, marginTop: 3 },
+  stackTitle: { fontWeight: 700, color: ink, marginRight: 6 },
+  stackGroup: { marginRight: 11 },
+  archiveItem: { marginRight: 4 },
+  stackLabel: { color: accent },
+  jobTech: { fontSize: 9.3, lineHeight: "12.5pt", color: soft, textAlign: "right", flexShrink: 0, paddingLeft: 12 },
+  note: { fontSize: 8.8, lineHeight: "11.5pt", color: soft, marginTop: -2, marginBottom: 2 },
+  archive: { flexDirection: "row", flexWrap: "wrap", fontSize: 9.1, lineHeight: "12.2pt", color: soft },
+  archiveLabel: { fontWeight: 700, color: ink, marginRight: 6 },
 });
 
 const clean = (text: string) => text.replace(/[\u2011\u2013\u2014]/g, "-");
@@ -71,6 +82,12 @@ function Callout({ items }: { items?: string[] }) {
       ? <Text style={s.calloutText}>{items[0]}</Text>
       : items.map((item, index) => <View key={index} style={s.bullet}><Text style={[s.calloutText, s.marker]}>–</Text><Text style={[s.calloutText, s.bulletText]}>{item}</Text></View>)}
   </View>;
+}
+
+/** The paper version of the website's technology filter: which of the filter technologies this entry uses. */
+function TechLine({ terms }: { terms?: string[] }) {
+  if (!terms?.length) return null;
+  return <Text style={s.jobTech}><Dots items={terms} /></Text>;
 }
 
 function Heading({ children }: { children: string }) {
@@ -90,7 +107,7 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       <View style={s.header}>
         <View style={s.nameRow}><Text style={s.name}>{person.name}</Text><View style={s.dot} /></View>
         <Text style={s.role}>{person.role}</Text>
-        <Text style={s.contact}><Dots items={[t.location, person.phone, <Link style={s.link} src={`mailto:${person.email}`}>{person.email}</Link>]} /></Text>
+        <Text style={s.contact}><Dots items={[t.location, t.availability, person.phone, <Link style={s.link} src={`mailto:${person.email}`}>{person.email}</Link>]} /></Text>
         <Text style={s.contact}><Dots items={[person.linkedinUrl, person.githubUrl, person.websiteUrl].map(url => <Link style={s.link} src={url}>{display(url)}</Link>)} /></Text>
       </View>
 
@@ -100,13 +117,23 @@ export function ResumePdf({ data }: { data: ResumeData }) {
       {data.experience.length > 0 && <Heading>{config.experienceHeading}</Heading>}
       {data.experience.map((job, index) => <View key={index} style={s.job} wrap={false}>
         <View style={s.row} minPresenceAhead={35}><Text style={s.heading}>{job.role}</Text><Text style={s.date}>{clean(job.date)}</Text></View>
-        <Text style={s.meta}><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
+        <View style={[s.row, s.meta]}>
+          <Text><Dots items={[<Text style={s.company}>{job.company}</Text>, job.team]} /></Text>
+          <TechLine terms={data.filters?.filter(term => mentions(term, jobTexts(job)))} />
+        </View>
         {job.details.length === 1 ? <Text>{job.details[0]}</Text> : job.details.map((detail, index) => <View key={index} style={s.bullet}><Text style={s.marker}>•</Text><Text style={s.bulletText}>{detail}</Text></View>)}
+        {/* Each group is its own box, so a line breaks between groups and never inside "Cloud Logging". */}
+        {job.stack && <View style={s.stack}>
+          <Text style={s.stackTitle}>{job.stack.title}</Text>
+          {job.stack.groups.map(group => <Text key={group.label} style={s.stackGroup}><Text style={s.stackLabel}>{group.label}</Text> {group.items.join(", ")}</Text>)}
+        </View>}
         <Callout items={job.process} />
       </View>)}
+      {data.experience.length > 0 && <Text style={s.note}>{t.workPrivacy}</Text>}
 
       {data.skills.length > 0 && <Heading>{config.skillsHeading}</Heading>}
-      {data.skills.map(skill => <View key={skill.id} style={s.skillRow} wrap={false}>
+      {/* A row can stay web-only when the paper says it elsewhere (Google Cloud lives in the Go Reply stack). */}
+      {data.skills.filter(skill => !skill.hideInPdf).map(skill => <View key={skill.id} style={s.skillRow} wrap={false}>
         <Text style={s.skillLabel}>{skill.label}</Text><Text style={s.skillValue}>{skill.value}</Text>
       </View>)}
 
@@ -122,6 +149,10 @@ export function ResumePdf({ data }: { data: ResumeData }) {
           <Text style={s.team}>{project.tech}</Text>,
         ]} /></Text>
       </View>)}
+      {config.includeArchive && data.archive.length > 0 && <View style={s.archive}>
+        <Text style={s.archiveLabel}>{t.archive}</Text>
+        {data.archive.map((project, index) => <Text key={project.name} style={s.archiveItem}>{project.url ? <Link src={project.url} style={s.link}>{project.name}</Link> : project.name} ({project.year}){index < data.archive.length - 1 ? "," : ""}</Text>)}
+      </View>}
 
       <View wrap={false}>
         <Heading>{t.education}</Heading>
@@ -143,13 +174,12 @@ export function ResumePdf({ data }: { data: ResumeData }) {
         ]} /></Text>
       </View>)}
 
-      {/* Availability is stated in the profile, so this block keeps only languages and, optionally, interests. */}
+      {/* Availability is in the header contact line, so this block keeps only languages and, optionally, interests. */}
       <View wrap={false}>
         <Heading>{config.includeInterests ? `${t.languages} · ${t.interests}` : t.languages}</Heading>
         <Text>{t.languageDetail}</Text>
         {config.includeInterests && <Text>{t.interestsDetail}</Text>}
       </View>
-      {config.includeArchive && data.archive.length > 0 && <View><Heading>{t.archive}</Heading>{data.archive.map((project, index) => <Text key={index}><Dots items={[project.name, project.year, project.url ? <Link src={project.url} style={s.link}>{t.repository}</Link> : null]} /></Text>)}</View>}
     </Page>
   </Document>;
 }

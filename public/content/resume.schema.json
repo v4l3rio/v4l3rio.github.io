@@ -460,6 +460,9 @@
           },
           "wide": {
             "type": "boolean"
+          },
+          "hideInPdf": {
+            "type": "boolean"
           }
         },
         "required": [
